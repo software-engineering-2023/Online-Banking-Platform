@@ -1,9 +1,8 @@
 # UA07
-Well 
+Hello,
 
-Hello , This is the Second milestone of SE project this semester ..
-Hope you enjoy the diagrams :) 
-
+This is the second milestone of the SE project for this semester.
+We hope you enjoy the diagrams :) 
 
 Many Thanks,
-UA07
+- UA07
