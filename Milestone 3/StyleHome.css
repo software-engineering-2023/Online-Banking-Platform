@@ -1,0 +1,70 @@
+body{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;    
+}
+img{
+    padding-left: 31.47%;
+    padding-top: 3.5%;
+    opacity: 0.9;
+}
+.buttonlogin{
+    padding-left: 45%;
+    padding-top: 3.1%;
+}
+.Login{
+  border-radius: 10px;
+  background-color: #171515;
+  border: none;
+  color: #ae9b9b;
+  text-align: center;
+  font-size: 27px;
+  padding: 20px;
+  width: 200px;
+  transition:all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 30px;
+}
+
+.Login span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.7s;
+}
+
+.Login span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+
+.Login:hover span {
+  padding-right: 25px;
+}
+
+.Login:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.Login:hover {
+  background-color: #e0e0e0; /* Change the color when hovering */
+}
+.Login:hover span {
+  color: #181717; /* Change the text color when hovering */
+  padding-right: 25px;
+}
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#08090a, #101111);
+}
