@@ -11,10 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>body{
-        background-color:black;
-    }
-    </style>
+    <link href="css/Registration.css" rel="stylesheet" />
     <title>Document</title>
 </head>
 <body>
@@ -36,41 +33,123 @@
               <img src="assets/Logo.png" width="800" height="600"
                 class="img-fluid">
             </div>
-            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" style="background-color:white;padding-top:75px; padding-bottom: 75px; padding-left: 25px; padding-right: 25px; border-radius: 20px; opacity: 0.85;">
-              <form>
-                <!-- Name input -->
-                <div class="form-outline mb-4">
-                    <input type="Full Name" class="form-control" id="inputemail" placeholder="Full Name" style="padding: 13px;">
-                </div>                
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="Email Address" class="form-control" id="inputemail" placeholder="Email address" style="padding: 13px;">
-                </div>
-                <!-- ID input -->
-                <div class="form-outline mb-4">
-                    <input type="National ID" class="form-control" id="inputid" placeholder="National ID" style="padding: 13px;">
-                </div>
-                <!-- Birth date -->
-                <div class="form-outline mb-4">
-                    <input type="date" class="form-control" id="inputdate" placeholder="Birth Date" style="padding: 13px;">
-                </div>  
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="number" class="form-control" id="inputnumber" placeholder="Phone Number" style="padding: 13px;"> 
-                </div>                                                
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                <input type="password" class="form-control" id="inputPassword" placeholder="password" style="padding: 13px;">
-                </div>
-
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-dark btn-lg btn-block" style="background-color: black;">Sign up</button>
-        
-      
-              </form>
-            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" style="background-color:white;padding-top: 25px; padding-bottom: 15px; padding-left: 25px; padding-right: 25px; border-radius: 20px; opacity: 0.85;">
+                <form class="needs-validation" novalidate>
+                    <div class="mb-4">
+                      <input type="text" class="form-control" id="validationCustom01" placeholder="Full Name" required style="padding: 13px;">
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please enter your FullName.
+                      </div>                      
+                    </div>
+                    <div class="mb-4">
+                      <input type="email" class="form-control" id="validationCustom02" placeholder="Email address" required style="padding: 13px;">
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please enter your Email.
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <input type="text" class="form-control" id="validationCustomUsername" placeholder="National ID" required style="padding: 13px;">
+                      <div class="invalid-feedback">
+                        Please enter your national ID.
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <input type="text" class="form-control" id="validationCustom03" placeholder="Birth Date" required style="padding: 13px;">
+                      <div class="invalid-feedback">
+                        Please provide a valid birth date.
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="exampleFormControlFile1">National ID / Passport</label>
+                        <input type="file" class="form-control" id="exampleFormControlFile1" required>
+                        <div class="invalid-feedback">
+                          Please choose a file.
+                        </div>
+                      </div>
+                    <div class="mb-4">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password" required style="padding: 13px;">
+                      <div class="invalid-feedback">
+                        Please enter a password.
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm password" required style="padding: 13px;">
+                      <div class="invalid-feedback">
+                        Please confirm your password.
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <button class="btn btn-dark btn-lg btn-block" type="submit">Sign up</button>
+                    </div>
+                    <div id="error-alert" style="display: none;">
+                      </div>                    
+                  </form>
+                  
+                  
           </div>
         </div>
       </section>
+      <script>
+        // Get the form element
+        var form = document.querySelector('.needs-validation');
+      
+        // Function to handle form submission
+        function submitForm(event) {
+          event.preventDefault();
+          event.stopPropagation();
+      
+          // Check if the form is valid
+          if (form.checkValidity()) {
+            // Perform form submission
+            // You can add your own code here to handle form submission
+      
+            // Show success message
+            showSuccessAlert();
+            
+            // Reset the form after submission
+            form.reset();
+          } else {
+            // Show error message
+            showErrorAlert();
+          }
+      
+          form.classList.add('was-validated');
+        }
+      
+        // Function to show success alert
+        function showSuccessAlert() {
+          swal({
+            title: "Success!",
+            text: "Form submitted successfully.",
+            icon: "success",
+            button: {
+            text: "OK",
+            className: "btn-black",
+          },
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+          }).then(() => {
+        // Redirect to Login.html
+          window.location.href = "Login.html";
+          });
+        }
+      
+        // Function to show error alert
+        function showErrorAlert() {
+            var errorAlert = document.getElementById('error-alert');
+            errorAlert.style.display = 'block';
+        }
+      
+        // Add event listener to the form on submit
+        form.addEventListener('submit', submitForm);
+      </script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      
 </body>
 </html>
