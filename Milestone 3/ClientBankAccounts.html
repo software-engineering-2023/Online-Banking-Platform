@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>UA07 | Client Overview</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/client.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="styelsheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        
+        <style>
+            hr {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            h1{
+                color: black;
+            }
+            h2{
+                color: black;
+            }
+            h3{
+                color: black;
+            }
+            h4{
+                color:black;
+            }
+            h5{
+                color:black;
+            }
+            p{
+                color:black;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 11;
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                }
+                @media only screen and (min-width: 1400px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+                .overlay {
+                    display: none;
+                }
+                }
+                @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+                .overlay.active {
+                    opacity: 1;
+                    visibility: visible;
+                    -webkit-transform: translateX(0);
+                    -moz-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                    -o-transform: translateX(0);
+                    transform: translateX(0);
+                }
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <div w3-include-html="./navbar.html"></div> 
+        <!-- Start of side bar -->
+        <aside id="layoutSidenav" style="color:white">
+        <div w3-include-html="./sidebar.html"></div> 
+        </aside>
+        <!-- end of side bar -->
+        <div class="overlay">
+        </div>
+        
+        <div id="layoutSidenav_content" style="margin-left: 14%; margin-top: 3%">
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Bank Accounts &amp; Billing</h1>
+                        <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-xl-8">
+                            <!-- FAQ Accordion 1-->
+                            <h2 class="fw-bolder mb-3">My Bank Accounts</h2>
+                            <div class="accordion mb-5" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h3 centerclass="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:rgb(208, 177, 6);" >Bank Account 1:  485296501033</button></h3>
+                                    <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body" style="width: 100%; border-collapse: collapse;">
+                                            <h4 style="text-align: center;">Recent Transcations</h5>
+                                            <br>
+                                            <table class="table table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                    <th class="column1" style="color: rgb(216, 192, 56);">Date</th>
+                                                    <th class="column2" style="color: rgb(216, 192, 56);">Account No.</th>
+                                                    <th class="column3" style="color: rgb(216, 192, 56);">Name</th>
+                                                    <th class="caa column4" style="color: rgb(216, 192, 56);">Amount</th>
+                                                    <th class="caa column5"style="color: rgb(216, 192, 56);">Type</th>
+                                                    <th class="caa column6"style="color: rgb(216, 192, 56);">Reason</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                    <td class="column1">2017-09-29 01:22</td>
+                                                    <td class="column2">200339827298</td>
+                                                    <td class="column3">German University</td>
+                                                    <td class="column4">$10000.00</td>
+                                                    <td class="column5">Withdraw</td>
+                                                    <td class="column6">Tuition Fees</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td class="column1">2017-09-28 05:57</td>
+                                                    <td class="column2">600339827298</td>
+                                                    <td class="column3">CIB bank Account</td>
+                                                    <td class="column4">$4756.00</td>
+                                                    <td class="column5">Withdraw</td>
+                                                    <td class="column6">Investment</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td class="column1">2017-09-26 05:57</td>
+                                                    <td class="column2">700373827298</td>
+                                                    <td class="column3">Amazon</td>
+                                                    <td class="column4">$122.00</td>
+                                                    <td class="column5">Deposit</td>
+                                                    <td class="column6">Refund</td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                                
+                                              </table>
+                                            
+                                              <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:goldenrod">
+                                                Send Money
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form class="row g-3 needs-validation" novalidate>
+                                                            <div class="col-md-4">
+                                                              <label for="validationCustom01" class="form-label">Reciever's Name</label>
+                                                              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                                              <div class="valid-feedback">
+                                                                Looks good!
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                              <label for="validationCustom02" class="form-label">Bank Account</label>
+                                                              <input type="text" class="form-control" id="validationCustom02" value="10001200012" required>
+                                                              <div class="valid-feedback">
+                                                                Looks good!
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                              <label for="validationCustom04" class="form-label">Bank Type</label>
+                                                              <select class="form-select" id="validationCustom04" required>
+                                                                <option selected disabled value="">Choose Bank type</option>
+                                                                <option>Domestic Bank (CRB)</option>
+                                                                <option>International(JPMorgan Chase)</option>
+                                                                <option>Internal</option>
+                                                              </select>
+                                                              <div class="invalid-feedback">
+                                                                Please select a valid state.
+                                                              </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-12">
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                                                <label class="form-check-label" for="invalidCheck">
+                                                                  Agree to terms and conditions
+                                                                </label>
+                                                                <div class="invalid-feedback">
+                                                                  You must agree before submitting.
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                           
+                                                            </div>
+                                                          </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                      <button type="button" class="btn btn-primary">Confirm</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color:rgb(208, 177, 6);">Bank Account 2:  393398591033</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <h4 style="text-align: center;">Recent Transcations</h5>
+                                                <br>
+                                                   <table class="table table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                        <th class="column1" style="color: rgb(216, 192, 56);">Date</th>
+                                                        <th class="column2" style="color: rgb(216, 192, 56);">Account No.</th>
+                                                        <th class="column3" style="color: rgb(216, 192, 56);">Name</th>
+                                                        <th class="caa column4" style="color: rgb(216, 192, 56);">Amount</th>
+                                                        <th class="caa column5"style="color: rgb(216, 192, 56);">Type</th>
+                                                        <th class="caa column6"style="color: rgb(216, 192, 56);">Reason</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                        <td class="column1">2017-09-29 01:22</td>
+                                                        <td class="column2">200339827298</td>
+                                                        <td class="column3">German University</td>
+                                                        <td class="column4">$10000.00</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Tuition Fees</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-28 05:57</td>
+                                                        <td class="column2">600339827298</td>
+                                                        <td class="column3">CIB bank Account</td>
+                                                        <td class="column4">$4756.00</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Investment</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-26 05:57</td>
+                                                        <td class="column2">700373827298</td>
+                                                        <td class="column3">Amazon</td>
+                                                        <td class="column4">$122.00</td>
+                                                        <td class="column5">Deposit</td>
+                                                        <td class="column6">Refund</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                    
+                                                </table>
+                                                
+                                                  <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModa" style="background-color:goldenrod">
+                                                    Send Money
+                                                  </button>
+                                                  <div class="modal fade" id="exampleModa" tabindex="-1" aria-labelledby="exampleModa" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <h5 class="modal-title" id="exampleModa">Send Money</h5>
+                                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="row g-3 needs-validation" novalidate>
+                                                                <div class="col-md-4">
+                                                                  <label for="validationCustom01" class="form-label">Reciever's Name</label>
+                                                                  <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                                                  <div class="valid-feedback">
+                                                                    Looks good!
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                  <label for="validationCustom02" class="form-label">Bank Account</label>
+                                                                  <input type="text" class="form-control" id="validationCustom02" value="10001200012" required>
+                                                                  <div class="valid-feedback">
+                                                                    Looks good!
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                  <label for="validationCustom04" class="form-label">Bank Type</label>
+                                                                  <select class="form-select" id="validationCustom04" required>
+                                                                    <option selected disabled value="">Choose Bank type</option>
+                                                                    <option>Domestic Bank (CRB)</option>
+                                                                    <option>International(JPMorgan Chase)</option>
+                                                                    <option>Internal</option>
+                                                                  </select>
+                                                                  <div class="invalid-feedback">
+                                                                    Please select a valid state.
+                                                                  </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-12">
+                                                                  <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                                                    <label class="form-check-label" for="invalidCheck">
+                                                                      Agree to terms and conditions
+                                                                    </label>
+                                                                    <div class="invalid-feedback">
+                                                                      You must agree before submitting.
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                  
+                                                                </div>
+                                                              </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                          <button type="button" class="btn btn-primary">Confirm</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color:rgb(208, 177, 6);">Bank Account 3:  141937985910</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <h4 style="text-align: center;">Recent Transcations</h5>
+                                                <br>
+                                                <table class="table table-striped">
+                                                        <thead>
+                                                        <tr>
+                                                        <th class="column1" style="color: rgb(216, 192, 56);">Date</th>
+                                                        <th class="column2" style="color: rgb(216, 192, 56);">Account No.</th>
+                                                        <th class="column3" style="color: rgb(216, 192, 56);">Name</th>
+                                                        <th class="caa column4" style="color: rgb(216, 192, 56);">Amount</th>
+                                                        <th class="caa column5"style="color: rgb(216, 192, 56);">Type</th>
+                                                        <th class="caa column6"style="color: rgb(216, 192, 56);">Reason</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                        <td class="column1">2017-09-29 01:22</td>
+                                                        <td class="column2">200339827298</td>
+                                                        <td class="column3">German University</td>
+                                                        <td class="column4">$10000.00</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Tuition Fees</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-28 05:57</td>
+                                                        <td class="column2">600339827298</td>
+                                                        <td class="column3">CIB bank Account</td>
+                                                        <td class="column4">$4756.00</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Investment</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-26 05:57</td>
+                                                        <td class="column2">700373827298</td>
+                                                        <td class="column3">Amazon</td>
+                                                        <td class="column4">$122.00</td>
+                                                        <td class="column5">Deposit</td>
+                                                        <td class="column6">Refund</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                    
+                                                  </table>
+                                                
+                                                  <button type="button" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="background-color:goldenrod">
+                                                    Send Money
+                                                  </button>
+                                                  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <h5 class="modal-title" id="exampleModalLabel3">Send Money</h5>
+                                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <form class="row g-3 needs-validation" novalidate>
+                                                            <div class="col-md-4">
+                                                              <label for="validationCustom01" class="form-label">Reciever's Name</label>
+                                                              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                                              <div class="valid-feedback">
+                                                                Looks good!
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                              <label for="validationCustom02" class="form-label">Bank Account</label>
+                                                              <input type="text" class="form-control" id="validationCustom02" value="10001200012" required>
+                                                              <div class="valid-feedback">
+                                                                Looks good!
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                              <label for="validationCustom04" class="form-label">Bank Type</label>
+                                                              <select class="form-select" id="validationCustom04" required>
+                                                                <option selected disabled value="">Choose Bank type</option>
+                                                                <option>Domestic Bank (CRB)</option>
+                                                                <option>International(JPMorgan Chase)</option>
+                                                                <option>Internal</option>
+                                                              </select>
+                                                              <div class="invalid-feedback">
+                                                                Please select a valid state.
+                                                              </div>
+                                                            </div>
+                                                            
+                                                            <div class="col-12">
+                                                              <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                                                <label class="form-check-label" for="invalidCheck">
+                                                                  Agree to terms and conditions
+                                                                </label>
+                                                                <div class="invalid-feedback">
+                                                                  You must agree before submitting.
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                              
+                                                            </div>
+                                                          </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                          <button type="button" class="btn btn-primary">Confirm</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Accordion 2-->
+                            <h2 class="fw-bolder mb-3">Website Issues</h2>
+                            <div class="accordion mb-5 mb-xl-0" id="accordionExample2">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">Accordion Item #1</button></h3>
+                                    <div class="accordion-collapse collapse show" id="collapseOne2" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong>
+                                            It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">Accordion Item #2</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">Accordion Item #3</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree2" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong>
+                                            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+                                            <code>.accordion-body</code>
+                                            , though the transition does limit overflow.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+            })
+        </script>
+         <script>
+            function includeHTML() {
+              var z, i, elmnt, file, xhttp;
+              /* Loop through a collection of all HTML elements: */
+              z = document.getElementsByTagName("*");
+              for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                  /* Make an HTTP request using the attribute value as the file name: */
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /* Remove the attribute, and call this function once more: */
+                      elmnt.removeAttribute("w3-include-html");
+                      includeHTML();
+                    }
+                  }
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  /* Exit the function: */
+                  return;
+                }
+              }
+            }
+            includeHTML();
+            </script> 
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
+
