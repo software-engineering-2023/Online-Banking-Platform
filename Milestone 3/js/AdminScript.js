@@ -2,7 +2,6 @@ const announcementArray = ["New Credit Card Rewards Program - Earn More Points w
 
 // Get the container element where the announcement items will be displayed
 const container = document.getElementById("announcements-container");
-const emptyContainer = document.createElement();
 
 // Loop through the announcement array and create a div element for each item
 for (let i = 0; i < announcementArray.length; i++) {
