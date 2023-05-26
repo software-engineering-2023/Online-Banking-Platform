@@ -13,7 +13,7 @@ document.getElementById("login-button").addEventListener("click", function(event
       } else if (username === "ClientUserName" && password === "ClientPassword") {
         window.location.href = "ClientOverview.html"; // Redirect to success page for user3 
       }
-      if (username === "" || password === "") {
+       else if (username === "" || password === "") {
         swal({
           title: "Please Enter Your Credentials",
           text: "Both email and password are required",
