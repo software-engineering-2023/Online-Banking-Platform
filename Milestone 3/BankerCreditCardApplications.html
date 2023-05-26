@@ -182,71 +182,158 @@
                 <!-- end row -->
             </div>
             <!-- ========== title-wrapper end ========== -->
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-xl-9 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
-                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z"/>
-                              </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Credit Cards Replacement Requests</h6>
-                            <h3 class="text-bold mb-10">8</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                <!-- End Icon Cart -->
-                </div>
-            </div>
-            <div class="row" style="margin-top: 50px;">
-                <!-- End Col -->
-        
-                <div class="col-xl-5 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">
-                                <path d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
-                                <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z"/>
-                            </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Loan Applications</h6>
-                            <h3 class="text-bold mb-10">4</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                <!-- End Icon Cart -->
-                </div>
-                <!-- End Col -->
-                <div class="col-xl-5 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-credit-card-2-front" viewBox="0 0 16 16">
-                                <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
-                                <path d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
-                            </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Credit Card Applications</h6>
-                            <h3 class="text-bold mb-10">20</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                <!-- End Icon Cart -->
-                </div>
-                <!-- End Col -->
-                
+
+            <table id="datatablesSimple" style="color:black; outline: none;">
+                <thead>
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Date and Time</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Date and Time</th>
+                        <th>View</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2022/04/20 17:03</td>
+                        <td><button type="button" class="btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#applicationModal">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2022/04/20 17:30</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2022/04/24 18:20</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2022/04/27 11:25</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2022/04/28 12:35</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/04/29 02:26</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/1 16:04</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/2 15:30</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/3 19:02</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/6 13:04</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/7 19:02</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/05/8 18:33</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/06/23 11:16</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/06/11 17:45</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/07/1 19:07</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/08/3 20:12</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/09/22 12:14</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/10/7 23:10</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/11/14 1:06</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                    <tr>
+                        <td>4763380</td>
+                        <td>2023/12/16 14:56</td>
+                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
             </div>
             </div>
         </section>
         <!-- end of main components -->
+
+
+        <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applicationModalLabel">Credit Card Application Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Name:  <span id="appName"></span></p>
+                        <p>Client ID: <span id="empID"></span></p>
+                        <p>Employment Status: <span id="appEmploymentStatus"></span></p>
+                        <p>
+                            Employment Verification PDF:
+                            <button type="button" class="btn btn-outline-primary" onclick="openPDF()">Open PDF</button>
+                        </p> 
+                        <p>Date & Time: <span id="appDate"></span></p>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Accept</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Reject</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -256,5 +343,6 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/creditcardApp.js"></script>
     </body>
 </html>
