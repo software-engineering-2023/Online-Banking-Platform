@@ -1,0 +1,195 @@
+/* ======= icon-card ======== */
+.icon-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 30px 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0px 10px 20px rgba(200, 208, 216, 0.3);
+    border-radius: 10px;
+  }
+  .icon-card.icon-card-3 {
+    display: block;
+    padding: 0px;
+  }
+  .icon-card.icon-card-3 .card-content {
+    display: flex;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .icon-card h6 {
+      font-size: 15px;
+    }
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .icon-card h3 {
+      font-size: 20px;
+    }
+  }
+  .icon-card.icon-card-2 {
+    display: block;
+  }
+  .icon-card.icon-card-2 .progress {
+    height: 7px;
+  }
+  .icon-card.icon-card-2 .progress .progress-bar {
+    border-radius: 4px;
+  }
+  .icon-card .icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background: rgba(74, 108, 247, 0.1);
+    color: #4a6cf7;
+    font-weight: 700;
+  }
+  .icon {
+    margin-right: 10px;
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .icon-card .icon {
+      margin-right: 10px;
+    }
+  }
+  .icon-card .icon.purple {
+    background: rgba(155, 81, 224, 0.1);
+    color: #9b51e0;
+  }
+  .icon-card .icon.success {
+    background: rgba(33, 150, 83, 0.1);
+    color: #219653;
+  }
+  .icon-card .icon.primary {
+    background: rgba(74, 108, 247, 0.1);
+    color: #4a6cf7;
+  }
+  .icon-card .icon.orange {
+    background: rgba(242, 153, 74, 0.1);
+    color: #f2994a;
+  }
+  .icon-card .icon.opacity-100.purple {
+    background: #9b51e0;
+    color: #fff;
+  }
+  .icon-card .icon.opacity-100.success {
+    background: #219653;
+    color: #fff;
+  }
+  .icon-card .icon.opacity-100.primary {
+    background: #4a6cf7;
+    color: #fff;
+  }
+  .icon-card .icon.opacity-100.orange {
+    background: #f2994a;
+    color: #fff;
+  }
+  section {
+    margin-top: 100px;
+    margin-left: 110px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    float: initial;
+  }
+  .icon-card .icon.opacity-100.deep-blue {
+    background: #345d9d;
+    color: #fff;
+  }
+  .container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  @media (max-width: 767px) {
+    .container-fluid {
+      padding-left: 20px;
+      padding-right: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+  .notification {
+    text-decoration: none;
+    color: white;
+  }
+
+  .announcement {
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+  }
+  .announcements-heading {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 60px;
+  }
+
+  .announcement-item {
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+    display: flex;
+  }
+
+  .announcement-well {
+    padding: 10px;
+    background-color: white;
+  }
+
+  .announcement-title{
+    font-size: 1.2em;
+    margin: 0;
+    text-align: left;
+  }
+  .announcement-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+  }
+  .announcement-link:hover {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .announcement-text {
+    font-size: 1em;
+    line-height: 1.4;
+    margin: 10px 0 0 0;
+  }
+  .btn-gradient {
+    background-image: linear-gradient(to right, #22242c, #22242c);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+    float: right;
+
+    text-decoration: none;
+  }
+  
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  .announcement-buttons {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  .updateButton .deleteButton {
+    margin-left: 5px;
+  }
