@@ -126,6 +126,7 @@
   }
   .announcements-heading {
     text-align: left;
+    float: left;
     margin-top: 10px;
     margin-bottom: 60px;
   }
@@ -189,7 +190,16 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    margin: 10px;
   }
   .updateButton .deleteButton {
     margin-left: 5px;
+  }
+
+  label {
+    font-size: 24px;
+  }
+
+  .showAnnouncementLabel {
+    font-size: 24px; font-weight: bold;
   }
