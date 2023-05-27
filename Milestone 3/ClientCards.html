@@ -451,11 +451,13 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Your report was sucessfully submitted. It will be reviewed by us and we will reach out to you soon.</p>
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        <p>Your report was sucessfully submitted. It will be reviewed by us and we will reach out to you soon.</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -536,7 +538,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Payment successful.
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Payment successful.
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -585,7 +589,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Your credit card points have been redeemed successfully.
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Your credit card points have been redeemed successfully.
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -624,7 +630,7 @@
                     var result = billAmount - paidAmount;
 
                     var numPaidAmount = Number(paidAmount);
-                    if (!isNaN(numPaidAmount)){
+                    if (isNaN(numPaidAmount)){
                         alert('Please enter a valid number.');
                         return;
                     }
