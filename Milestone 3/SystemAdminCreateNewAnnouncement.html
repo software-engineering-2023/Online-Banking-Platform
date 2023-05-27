@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,7 +23,7 @@
             <div class="container">
                 <h2 class="announcements-heading" style="margin-left: 12%;">Create New Announcement</h2> 
                 <div class="border container col-9 align-items-center justify-content-center">
-                    <form method="post" class="mt-5 mb-5">
+                    <form method="post" class="mt-5 mb-5 needs-validation">
                         <div class="form-group row">
                             <div class="col-3 ml-1">
                                 <label for="exampleFormControlInput1">Subject</label>
@@ -34,7 +34,7 @@
                         </div>
                         <br>
                         <br>
-                        <div class="form-group row">
+                        <div class="form-group row mb-5">
                             <div class="col-3 ml-1">
                                 <label for="exampleFormControlTextarea1">Announcement</label>
                             </div>
@@ -42,16 +42,17 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <button type="submit" value="Create" class="btn btn-primary form-control">Create</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="SystemAdminBankAnnouncements.html" class="btn btn-success form-control">Back To List</a>
+                            </div>
+                        </div>
                         <br>
                     </form>
-                    <div class="row align-items-center justify-content-center mb-2">
-                        <div class="col-6">
-                            <button href="SystemAdminBankAnnouncements.html" type="button" value="Create" onclick="onCreateAnnouncement();" class="btn btn-primary form-control">Create</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="SystemAdminBankAnnouncements.html" class="btn btn-success form-control">Back To List</a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             
@@ -67,21 +68,15 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script>
-            function onCreateAnnouncement() {
-                const titleInput = document.getElementById("exampleFormControlInput1");
-                const contentInput = document.getElementById("exampleFormControlTextarea1");
-                if(titleInput.textContent == "") {
-                    titleInput.style.color = "red";
-                    titleInput.placeholder = "cannot be empty";
-                }
-                else if(contentInput.textContent == "") {
-                    contentInput.style.color = "red";
-                    contentInput.placeholder = "cannot be empty";
-                }
-                else {
+            var form = document.querySelector('.needs-validation');
+           
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                if (form.checkValidity()) {
                     window.location.href = "SystemAdminBankAnnouncements.html";
                 }
-            }
-        </script>
+            });
+        </script>
     </body>
 </html>

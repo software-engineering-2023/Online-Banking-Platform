@@ -11,6 +11,9 @@ const myAlert = Swal.mixin();
 
 const detailsModal = document.getElementById("showAnnouncementModal");
 
+const form = document.querySelector('.needs-validation');   
+
+
 
 // Loop through the announcement array and create a div element for each item
 announcementArray.forEach((announcement) => {
@@ -118,8 +121,13 @@ function showUpdatePopup(announcement) {
   updateModal.querySelector("textarea").value = announcement.content;
 
   // Update the submit button
-  const submitButton = updateModal.querySelector("#saveChangesButton");
-  submitButton.addEventListener("click", () => handleUpdateAnnouncementSubmit(announcement));
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (form.checkValidity()) {
+          handleUpdateAnnouncementSubmit(announcement);
+      }
+  });
 }
 
 function showDetailsPopup(announcement) {
