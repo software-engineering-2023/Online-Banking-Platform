@@ -408,7 +408,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" id="reportForm">
                         <div class="form-group">
                           <label for="exampleFormControlSelect1">My credit card was:</label>
                           <select class="form-control" id="exampleFormControlSelect1" required>
@@ -418,28 +418,29 @@
                           </select>
                         </div>
                         <br>
-                        <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Give us more details about what happened to your card</label>
+                        <div class="form-group" style="margin-bottom: 3%">
+                          <label for="exampleFormControlTextarea1">Give us more details about what happened to your card.</label>
                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                         </div>
                         <br>
-                        <p>Please select to block your card, apply for replacement, or both. Please note that a card replacement application costs fees of 500 EGP.</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <p clas="text-muted">You can select zero, one or two of the following options.</p>
+                        <div class="form-check" style="margin-bottom: 3%">
+                            <input class="form-check-input" type="checkbox" value="" id="flex1">
                             <label class="form-check-label" for="flexCheckDefault">
-                              Request to block card
+                              Request to freeze card
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="flex1">
                             <label class="form-check-label" for="flexCheckChecked">
-                              Apply for card replacement
+                              Apply for card replacement (please note that a card replacement costs fees of 150 EGP)
                             </label>
                           </div>
+                          <br>
+                          <div class="modal-footer">
+                            <input type="submit" class="btn btn-danger" value="Submit Report">
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-danger" onclick="submitReport()" data-bs-target="#exampleModal2" data-bs-toggle="modal">Submit</button>
                 </div>
             </div>
             </div>
@@ -457,7 +458,7 @@
                     <p>Your report was sucessfully submitted. It will be reviewed by us and we will reach out to you soon.</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
                 </div>
             </div>
             </div>
@@ -476,7 +477,7 @@
                     <p><strong>Amount: </strong>3095.00 EGP</p>
                     <p><strong>Payment Type: </strong>Full payment</p>
                     <br>
-                    <form>
+                    <form class="needs-validation" id="payFullForm">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Select payment method</label>
                         <select class="form-control" id="exampleFormControlSelect1">
@@ -486,7 +487,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="payBillFully()">Pay Bill</button>
+                    <button type="button" class="btn btn-success" data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="payBillFully()">Pay Bill</button>
                 </div>
             </div>
             </div>
@@ -505,22 +506,22 @@
                     <p><strong>Total Bill Amount:</strong> 3095.00 EGP</p>
                     <p><strong>Payment Type: </strong>Partial payment</p>
                     <br>
-                    <form>
+                    <form class="needs-validation" id="payPartialForm">
                         <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Enter amount to pay (in EGP)</label>
-                          <input class="form-control" id="partialAmountInput" rows="3"></textarea>
+                          <label for="exampleFormControlTextarea1">Enter amount to pay in EGP</label>
+                          <input class="form-control" id="partialAmountInput" rows="3" required></textarea>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select payment method</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="exampleFormControlSelect1" required>
                               <option>Bank Account (Number): 485296501033 </option>
                             </select>
-                          </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-success" value="Pay Bill">
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="payBillPartially()">Pay Bill</button>
                 </div>
             </div>
             </div>
@@ -594,24 +595,58 @@
         </div>
 
         <script>
+            var reportForm = document.getElementById("reportForm");
+
+            reportForm.addEventListener("submit", function(e) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (reportForm.checkValidity()) {
+                    $('#exampleModal').modal('hide');
+                    $('#exampleModal2').modal('show');
+                    reportForm.classList.add('was-validated');
+                    document.getElementById("reportButton").disabled = true;
+                    document.getElementById("reportSubmittedMessage").style.visibility = "visible";
+                }
+            });
+
+            var payPartialForm = document.getElementById("payPartialForm");
+
+            payPartialForm.addEventListener("submit", function(e) {
+                event.preventDefault();
+                event.stopPropagation();
+
+                console.log("Reached 0");
+
+                if (payPartialForm.checkValidity()){
+                    var billAmount = document.getElementById("billAmount").innerHTML;
+                    var paidAmount = document.getElementById("partialAmountInput").value;
+                    var result = billAmount - paidAmount;
+
+                    var numPaidAmount = Number(paidAmount);
+                    if (!isNaN(numPaidAmount)){
+                        alert('Please enter a valid number.');
+                        return;
+                    }
+
+                    $('#exampleModal33').modal('hide');
+                    $('#exampleModal4').modal('show');
+
+                    if (result < 0){
+                        result = 0;
+                        document.getElementById("payBillFullyButton").disabled = true;
+                        document.getElementById("payBillPartiallyButton").disabled = true;
+                    }
+                    document.getElementById("billAmount").innerHTML = result;
+                }
+            });
+
             function payBillFully() {
                 document.getElementById("billAmount").innerHTML = "0";
                 document.getElementById("payBillFullyButton").disabled = true;
                 document.getElementById("payBillPartiallyButton").disabled = true;
             }
-            function payBillPartially() {
-                var billAmount = document.getElementById("billAmount").innerHTML;
-                var paidAmount = document.getElementById("partialAmountInput").value;
-                var result = billAmount - paidAmount;
 
-                if(result<0){
-                    result = 0;
-                    document.getElementById("payBillFullyButton").disabled = true;
-                    document.getElementById("payBillPartiallyButton").disabled = true;
-                }
-
-                document.getElementById("billAmount").innerHTML = result;
-            }
             function redeemPoints(){
                 var points = document.getElementById("points").innerHTML;
                 document.getElementById("points").innerHTML = "0";
@@ -619,36 +654,11 @@
 
                 document.getElementById("redeemButton").disabled = true;
             }
-            function submitReport(){
-                document.getElementById("reportButton").disabled = true;
-                document.getElementById("reportSubmittedMessage").style.visibility = "visible";
-            }
-            (function () {
-                'use strict'
-
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.querySelectorAll('.needs-validation')
-
-                // Loop over them and prevent submission
-                Array.prototype.slice.call(forms)
-                    .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        }
-
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-            })()
         </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
