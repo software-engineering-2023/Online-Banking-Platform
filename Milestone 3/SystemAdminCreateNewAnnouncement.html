@@ -20,43 +20,41 @@
             <br>
             <div w3-include-html="./SystemAdminNavbar.html"></div>
             <!-- start of main components -->
-            <h2 class="announcements-heading" style="margin-left: 280px;">Create New Announcement</h2> 
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="border container col-9" style="margin-left: 280px;">
-                <form method="post">
-                    <div class="form-group row">
+            <div class="container">
+                <h2 class="announcements-heading" style="margin-left: 12%;">Create New Announcement</h2> 
+                <div class="border container col-9 align-items-center justify-content-center">
+                    <form method="post" class="mt-5 mb-5">
+                        <div class="form-group row">
+                            <div class="col-3 ml-1">
+                                <label for="exampleFormControlInput1">Subject</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" required>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group row">
+                            <div class="col-3 ml-1">
+                                <label for="exampleFormControlTextarea1">Announcement</label>
+                            </div>
+                            <div class="col-6">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                    <div class="row align-items-center justify-content-center mb-2">
                         <div class="col-6">
-                            <label for="exampleFormControlInput1">Subject</label>
+                            <button href="SystemAdminBankAnnouncements.html" type="button" value="Create" onclick="onCreateAnnouncement();" class="btn btn-primary form-control">Create</a>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="form-group row">
-                        <div class="col-6">
-                            <label for="exampleFormControlTextarea1">Announcement</label>
-                        </div>
-                        <div class="col-6">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                        </div>
-                    </div>
-                    <br>
-                    <div style="margin-left:160px;" class="form-group row">
-                        <div class="col-3 offset-2">
-                            <a href="SystemAdminBankAnnouncements.html" type="submit" value="Create" class="btn btn-primary form-control">Create</a>
-                        </div>
-                        <div class="col-3">
                             <a href="SystemAdminBankAnnouncements.html" class="btn btn-success form-control">Back To List</a>
                         </div>
-                        <br>
-                        <br>
                     </div>
-                </form>
+                </div>
             </div>
+            
             <!-- end of main components -->
         </div>
         <script src="js/NavBarRenderer.js"></script>
@@ -68,5 +66,22 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script>
+            function onCreateAnnouncement() {
+                const titleInput = document.getElementById("exampleFormControlInput1");
+                const contentInput = document.getElementById("exampleFormControlTextarea1");
+                if(titleInput.textContent == "") {
+                    titleInput.style.color = "red";
+                    titleInput.placeholder = "cannot be empty";
+                }
+                else if(contentInput.textContent == "") {
+                    contentInput.style.color = "red";
+                    contentInput.placeholder = "cannot be empty";
+                }
+                else {
+                    window.location.href = "SystemAdminBankAnnouncements.html";
+                }
+            }
+        </script>
     </body>
 </html>
