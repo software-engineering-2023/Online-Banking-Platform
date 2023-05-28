@@ -1,3 +1,6 @@
+var AppsNocard = 20;
+var AppsNoloan = 4;
+
 var clientIDs = [4763380,9474037,4763380,9474037,4763380
                 ,9474037,4763380,9474037,4763380,4763380
                 ,9474037,4763380,9474037,9474037,4763380
@@ -17,3 +20,25 @@ var showrow = [true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true];
+
+// function loadData(){
+//     if (localStorage.getItem("AppsNocard") == null) {
+//         return;
+//     }
+//     AppsNocard = localStorage.getItem("AppsNocard");
+//     AppsNoloan = localStorage.getItem("AppsNoloan");
+//     clientIDs = localStorage.getItem("clientIDs");
+//     dates = localStorage.getItem("dates");
+//     cardTypes = localStorage.getItem("cardTypes");
+//     showrow = localStorage.getItem("showrow");
+// }
+
+
+// function saveData() {
+//     localStorage.setItem("AppsNocard", AppsNocard);
+//     localStorage.setItem("AppsNoloan", AppsNoloan);
+//     localStorage.setItem("clientIDs", clientIDs);
+//     localStorage.setItem("dates", dates);
+//     localStorage.setItem("cardTypes", cardTypes);
+//     localStorage.setItem("showrow", showrow);
+// }
