@@ -412,10 +412,45 @@
         <!-- Modal 1 for report -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Make a report on your credit card</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Make a report on your credit card</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">My credit card was:</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Stolen</option>
+                                    <option>Lost</option>
+                                    <option>Damaged</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Give us more details about what happened to your card</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <br>
+                            <p>Please select to block your card, apply for replacement, or both. Please note that a card replacement application costs fees of 500 EGP.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                Request to block card
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                Apply for card replacement
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-target="#exampleModal2" data-bs-toggle="modal">Submit</button>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <form class="needs-validation" id="reportForm">
@@ -515,7 +550,7 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Card Number:</strong> 154394874163945</p>
-                    <p><strong>Total Bill Amount:</strong><span id="totalBillAmountInPartialModal"> 5785.00 EGP</span></p>
+                    <p><strong>Total Bill Amount: </strong><span id="totalBillAmountInPartialModal"> 5785.00 EGP</span></p>
                     <p><strong>Payment Type: </strong>Partial payment</p>
                     <br>
                     <form class="needs-validation" id="payPartialForm">
