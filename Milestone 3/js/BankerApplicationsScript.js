@@ -18,7 +18,24 @@ $(document).ready(function() {
     }
 });
 
+$(document).ready(function() {
+    // alert("Welcome to the Credit Card Application Page");
+    // loadData();
+    $('#cardAppNo').text(AppsNocard);
+    $('#loanAppNo').text(AppsNoloan);
 
+    for (var i = 0; i < clientIDs.length; ++i) {
+        var row = $("#lrow" + i);
+        row.css('display', showrow[i] ? 'table-row' : 'none');
+        var cells = row.find("td");
+
+        // Access the specific <td> element you want to edit (e.g., the second <td>)
+        // Modify the content of the <td> element
+        $(cells[0]).text(clientIDs[i]);
+        $(cells[1]).text(dates[i]);
+        $(cells[2]).text(loanTypes[i]);
+    }
+});
 
 
 
@@ -33,12 +50,33 @@ $(document).ready(function(){
         showrow[apID] = false;
         AppsNocard--;
         $('#cardAppNo').text(AppsNocard);
+        $('#maincardNo').text(AppsNocard);
 
         // saveData();
         // alert(showrow);
     });
 });
 
+$(document).ready(function(){
+    $(".lacceptance").click(function(){
+        var lapID = +document.getElementById('lappID').textContent;
+
+        var lstatus = $(this).text();
+        alert("Application Of ID '"+ lapID + "' has been " + lstatus + "ed");
+
+        $("#lrow"+lapID).hide();
+        showrow[lapID] = false;
+        AppsNoloan--;
+        $('#loanAppNo').text(AppsNoloan);
+        $('#mainloanNo').text(AppsNoloan);
+
+        // saveData();
+        // alert(showrow);
+    });
+});
+
+
+if(document.getElementById('applicationModal'))
 document.getElementById('applicationModal').addEventListener('show.bs.modal', function (event) {
         // Get the button that triggered the modal
         var button = event.relatedTarget;
@@ -66,6 +104,33 @@ document.getElementById('applicationModal').addEventListener('show.bs.modal', fu
         // Add more code to populate other application details
 });
 
+if(document.getElementById('applicationModal2'))
+document.getElementById('applicationModal2').addEventListener('show.bs.modal', function (event) {
+        // Get the button that triggered the modal
+        var button = event.relatedTarget;
+        var lid = +button.id.substring(2);
+
+
+        // Get the application details from the button's data attributes or other sources
+        var lempID = clientIDs[lid];
+        var lappName = (lempID == 4763380)?"AbuElKheir": "Andrew Mostafa Tate"; // Example application name
+        var lappEmploymentStatus = (lempID == 4763380)? "Full-Time": "Part-Time"; // Example employment status
+        var lappDate = dates[lid];
+        var loanType = loanTypes[lid];
+        
+        // Populate the modal with the application details
+        document.getElementById('lappName').textContent = lappName;
+        document.getElementById('lappEmploymentStatus').textContent = lappEmploymentStatus;
+        document.getElementById('lappDate').textContent = lappDate;
+        document.getElementById('lempID').textContent = lempID;
+        document.getElementById('apploanType').textContent = loanType;
+        document.getElementById('lappID').textContent = lid;
+        if(lappEmploymentStatus == "Unemployed")
+            $("#pdfbutton").prop("disabled", true);
+        else
+            $("#pdfbutton").prop("disabled", false);
+        // Add more code to populate other application details
+});
 function openPDF() {
     window.open('assets/Employment.pdf', '_blank');
   }

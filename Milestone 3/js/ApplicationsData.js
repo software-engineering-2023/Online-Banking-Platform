@@ -16,6 +16,8 @@ var cardTypes = ['Visa','Visa','Mastercard','Visa','Visa'
                 ,'Mastercard','Visa','Visa','Mastercard','Visa'
                 ,'Visa','Visa','Mastercard','Mastercard','Visa'];
 
+var loanTypes = ['Personal','Mortage','Mortage','Personal'];
+
 var showrow = [true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true
