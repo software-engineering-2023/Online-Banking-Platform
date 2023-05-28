@@ -214,20 +214,7 @@
             </div>
         </div>
 
-        <script>
-            function payBillFully() {
-                document.getElementById("billAmount").innerHTML = "0";
-                document.getElementById("payBillFullyButton").disabled = true;
-                const paidInstallementsDetail = document.getElementById("paid-installements");
-                paidInstallementsDetail.textContent = Number(paidInstallementsDetail.textContent) + 1;
-                const remainingInstallementsDetail = document.getElementById("remaining-installements")
-                remainingInstallementsDetail.textContent = Number(remainingInstallementsDetail.textContent) - 1;
-                if(remainingInstallementsDetail.textContent === "0") {
-
-                }
-            }
-
-        </script>
+        <script src="js/ClientLoanScript.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
