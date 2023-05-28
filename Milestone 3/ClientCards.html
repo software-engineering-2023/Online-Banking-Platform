@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>UA07 | Cards</title>
+        <title>UA07 | Credit Cards</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/client.css" rel="stylesheet" />
@@ -28,6 +28,9 @@
                 color:black;
             }
             h5{
+                color:black;
+            }
+            label{
                 color:black;
             }
             p{
@@ -179,6 +182,13 @@
                                     <img src ="assets/goldcard.png" width="390">
                                 </div>
                                 <br>
+                                <div class="container">
+                                    <h2>Balance:</h2>
+                                    <span class="text-muted" style="font-size: large">
+                                        <span id="balance">-5785.00</span> EGP
+                                    </span>
+                                </div>
+                                <br>
                                 <div class="container" style="padding-top: 4%">
                                     <div>
                                         <button  id="reportButton" type="button" class="btn" style="background-color:rgb(60, 60, 60); color:white" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -221,7 +231,7 @@
                                         <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" style="background-color:black; color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">Monthly bill for this card</button></h3>
                                         <div class="accordion-collapse collapse show" id="collapseTwo2" aria-labelledby="headingTwo" style="color:black;" data-bs-parent="#accordionExample2">
                                             <div class="accordion-body">
-                                                <strong>Due Amount: </strong><p id="billAmount">3095.00</p>
+                                                <strong>Due Amount: </strong><p id="billAmount">5785.00</p>
                                                 <strong>Currency: </strong><p>EGP</p>
                                                 <strong>Due Date: </strong><p>2023/06/28 at 11:59 pm</p>
                                                 <button type="button" id="payBillFullyButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">Pay Bill Fully</button>
@@ -252,7 +262,7 @@
                                                             <th>Currency</th>
                                                             <th>Merchant Name</th>
                                                             <th>Date and Time</th>
-                                                            <th>Status</th>
+                                                            <th>Balance after Transaction</th>
                                                         </tr>
                                                     </thead>
                                                     <tfoot>
@@ -262,7 +272,7 @@
                                                             <th>Currency</th>
                                                             <th>Merchant Name</th>
                                                             <th>Date and Time</th>
-                                                            <th>Status</th>
+                                                            <th>Balance after Transaction</th>
                                                         </tr>
                                                     </tfoot>
                                                     <tbody>
@@ -272,7 +282,7 @@
                                                             <td>EGP</td>
                                                             <td>McDonald's Egypt</td>
                                                             <td>2023/04/20 17:03</td>
-                                                            <td>Successful</td>
+                                                            <td>-150.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -280,7 +290,7 @@
                                                             <td>EGP</td>
                                                             <td>Zara</td>
                                                             <td>2023/04/20 17:30</td>
-                                                            <td>Successful</td>
+                                                            <td>-2590.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -288,7 +298,7 @@
                                                             <td>EGP</td>
                                                             <td>Amazon.eg</td>
                                                             <td>2023/04/24 18:20</td>
-                                                            <td>Successful</td>
+                                                            <td>-3040.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -296,7 +306,7 @@
                                                             <td>EGP</td>
                                                             <td>Unknown</td>
                                                             <td>2023/04/27 11:25</td>
-                                                            <td>Successful</td>
+                                                            <td>-3430.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -304,7 +314,7 @@
                                                             <td>EGP</td>
                                                             <td>Starbucks</td>
                                                             <td>2023/04/28 12:35</td>
-                                                            <td>Successful</td>
+                                                            <td>-3680.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -312,7 +322,7 @@
                                                             <td>EGP</td>
                                                             <td>Sea Cinema</td>
                                                             <td>2023/04/29 02:26</td>
-                                                            <td>Successful</td>
+                                                            <td>-150.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -320,7 +330,7 @@
                                                             <td>EGP</td>
                                                             <td>Taiyaki</td>
                                                             <td>2023/05/1 16:04</td>
-                                                            <td>Successful</td>
+                                                            <td>-800.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -328,7 +338,7 @@
                                                             <td>EGP</td>
                                                             <td>Chillout 90</td>
                                                             <td>2023/05/2 15:30</td>
-                                                            <td>Successful</td>
+                                                            <td>-975.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -336,7 +346,7 @@
                                                             <td>EGP</td>
                                                             <td>Steam</td>
                                                             <td>2023/05/3 19:02</td>
-                                                            <td>Successful</td>
+                                                            <td>-2025.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -344,7 +354,7 @@
                                                             <td>EGP</td>
                                                             <td>Origin</td>
                                                             <td>2023/05/6 13:04</td>
-                                                            <td>Successful</td>
+                                                            <td>-2345.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -352,7 +362,7 @@
                                                             <td>EGP</td>
                                                             <td>L'Aroma</td>
                                                             <td>2023/05/7 19:02</td>
-                                                            <td>Successful</td>
+                                                            <td>-3245.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -360,7 +370,7 @@
                                                             <td>EGP</td>
                                                             <td>Costa Coffee</td>
                                                             <td>2023/05/8 18:33</td>
-                                                            <td>Failed</td>
+                                                            <td>-3385.00</td>
                                                         </tr>
                                                         <tr>
                                                             <td>154394874163945</td>
@@ -368,7 +378,7 @@
                                                             <td>EGP</td>
                                                             <td>Nike</td>
                                                             <td>2023/05/10 14:16</td>
-                                                            <td>Pending</td>
+                                                            <td>-5785.00</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -387,11 +397,11 @@
             <hr style="width: 80%; margin-left: 10%;">
         </div>
         <br>
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center; margin-left: 10%">
             <img src="assets/graycard.png" width="390">
         </div>
         <br>
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center; margin-left: 10%">
             <button type="button" class="btn" style="background-color: rgb(60, 60, 60); color:white" onclick="location.href='ClientCardApplication.html';">Apply for a new Credit Card</button>
         </div>
         <br>
@@ -402,10 +412,45 @@
         <!-- Modal 1 for report -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Make a report on your credit card</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Make a report on your credit card</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">My credit card was:</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Stolen</option>
+                                    <option>Lost</option>
+                                    <option>Damaged</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Give us more details about what happened to your card</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <br>
+                            <p>Please select to block your card, apply for replacement, or both. Please note that a card replacement application costs fees of 500 EGP.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                Request to block card
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                Apply for card replacement
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-target="#exampleModal2" data-bs-toggle="modal">Submit</button>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <form class="needs-validation" id="reportForm">
@@ -451,11 +496,13 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Your report was sucessfully submitted. It will be reviewed by us and we will reach out to you soon.</p>
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        <p>Your report was sucessfully submitted. It will be reviewed by us and we will reach out to you soon.</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -474,7 +521,7 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Card Number: </strong>154394874163945</p>
-                    <p><strong>Amount: </strong>3095.00 EGP</p>
+                    <p><strong>Total Bill Amount: </strong><span id="totalBillAmountInFullModal"> 5785.00 EGP</span></p>
                     <p><strong>Payment Type: </strong>Full payment</p>
                     <br>
                     <form class="needs-validation" id="payFullForm">
@@ -503,7 +550,7 @@
                 </div>
                 <div class="modal-body">
                     <p><strong>Card Number:</strong> 154394874163945</p>
-                    <p><strong>Total Bill Amount:</strong> 3095.00 EGP</p>
+                    <p><strong>Total Bill Amount: </strong><span id="totalBillAmountInPartialModal"> 5785.00 EGP</span></p>
                     <p><strong>Payment Type: </strong>Partial payment</p>
                     <br>
                     <form class="needs-validation" id="payPartialForm">
@@ -536,7 +583,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Payment successful.
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Payment successful.
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -585,7 +634,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Your credit card points have been redeemed successfully.
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Your credit card points have been redeemed successfully.
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -621,10 +672,11 @@
                 if (payPartialForm.checkValidity()){
                     var billAmount = document.getElementById("billAmount").innerHTML;
                     var paidAmount = document.getElementById("partialAmountInput").value;
+                    var balance = document.getElementById("balance").innerHTML;
                     var result = billAmount - paidAmount;
 
                     var numPaidAmount = Number(paidAmount);
-                    if (!isNaN(numPaidAmount)){
+                    if (isNaN(numPaidAmount)){
                         alert('Please enter a valid number.');
                         return;
                     }
@@ -632,19 +684,29 @@
                     $('#exampleModal33').modal('hide');
                     $('#exampleModal4').modal('show');
 
-                    if (result < 0){
+                    if (result <= 0){
                         result = 0;
+                        // disable payment buttons
                         document.getElementById("payBillFullyButton").disabled = true;
                         document.getElementById("payBillPartiallyButton").disabled = true;
                     }
+
                     document.getElementById("billAmount").innerHTML = result;
+                    document.getElementById("balance").innerHTML = -result;
+                    document.getElementById("totalBillAmountInFullModal").innerHTML = result;
+                    document.getElementById("totalBillAmountInPartialModal").innerHTML = result;
                 }
             });
 
             function payBillFully() {
-                document.getElementById("billAmount").innerHTML = "0";
+                // disable payment buttons
                 document.getElementById("payBillFullyButton").disabled = true;
                 document.getElementById("payBillPartiallyButton").disabled = true;
+
+                document.getElementById("billAmount").innerHTML = "0";
+                document.getElementById("balance").innerHTML = "0";
+                document.getElementById("totalBillAmountInFullModal").innerHTML = "0";
+                document.getElementById("totalBillAmountInPartialModal").innerHTML = "0";
             }
 
             function redeemPoints(){
