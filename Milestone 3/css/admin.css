@@ -206,7 +206,7 @@
   }
 
   .showAnnouncementLabel {
-    font-size: 24px; font-weight: bold;
+    font-size: 150%; font-weight: 500;
   }
   .card {
     width: 60%; height: 100%;

@@ -131,7 +131,6 @@ function showUpdatePopup(announcement) {
 }
 
 function showDetailsPopup(announcement) {
-    let index = announcementArray.indexOf(announcement);
     detailsModal.querySelector("p").textContent = announcement.content;
     detailsModal.querySelector("#title-shown").textContent = announcement.title;
 }
