@@ -194,7 +194,14 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title mb-30">
-                            <h2>Credit Card Applications</h2>
+                            <figure>
+                                <blockquote class="blockquote">
+                                  <p class="display-4" style="padding-bottom: 1rem;">Loan Applications</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                  Good Afternoon, You have <cite title="Source Title"><span id="mainLoanNo">4</span></cite> unresponded loan applications
+                                </figcaption>
+                              </figure>
                         </div>
                     </div>
                     <!-- end col -->
@@ -203,12 +210,12 @@
             </div>
             <!-- ========== title-wrapper end ========== -->
 
-            <table class="table table-hover" style="color:black; outline: none;">
+            <table class="table table-striped table-hover" style="color:black; outline: none;">
                 <thead>
                     <tr>
                         <th>Client ID</th>
                         <th>Date and Time</th>
-                        <th>Card Type</th>
+                        <th>Loan Type</th>
                         <th>View</th>
                     </tr>
                 </thead>
@@ -221,145 +228,33 @@
                     </tr>
                 </tfoot>-->
                 <tbody>
-                    <tr id="row0" class="myrow">
+                    <tr id="lrow0">
                         <td>4763380</td>
                         <td>2022/04/19 14:30</td>
-                        <td>VISA</td>
-                        <td><button id="b0" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
+                        <td>Personal</td>
+                        <td><button id="lb0" type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal2">view application</button></td>
                     </tr>
-                    <tr id="row1">
+                    <tr id="lrow1">
                         <td>9474037</td>
                         <td>2022/04/20 17:30</td>
-                        <td>VISA</td>
-                        <td><button id="b1" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
+                        <td>Personal</td>
+                        <td><button id="lb1" type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal2">view application</button></td>
                     </tr>
-                    <tr id="row2">
+                    <tr id="lrow2">
                         <td>4763380</td>
                         <td>2022/04/24 18:20</td>
-                        <td>VISA</td>
-                        <td><button id="b2" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
+                        <td>Personal</td>
+                        <td><button id="lb2" type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal2">view application</button></td>
                     </tr>
-                    <tr id="row3">
+                    <tr id="lrow3">
                         <td>9474037</td>
                         <td>2022/04/27 11:25</td>
-                        <td>VISA</td>
-                        <td><button id="b3" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row4">
-                        <td>4763380</td>
-                        <td>2022/04/28 12:35</td>
-                        <td>VISA</td>
-                        <td><button id="b4" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row5">
-                        <td>9474037</td>
-                        <td>2023/04/29 02:26</td>
-                        <td>VISA</td>
-                        <td><button id="b5" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row6">
-                        <td>4763380</td>
-                        <td>2023/05/1 16:04</td>
-                        <td>VISA</td>
-                        <td><button id="b6" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row7">
-                        <td>9474037</td>
-                        <td>2023/05/2 15:30</td>
-                        <td>VISA</td>
-                        <td><button id="b7" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row8">
-                        <td>4763380</td>
-                        <td>2023/05/3 19:02</td>
-                        <td>VISA</td>
-                        <td><button id="b8" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row9">
-                        <td>4763380</td>
-                        <td>2023/05/6 13:04</td>
-                        <td>VISA</td>
-                        <td><button id="b9" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row10">
-                        <td>9474037</td>
-                        <td>2023/05/7 19:02</td>
-                        <td>VISA</td>
-                        <td><button id="b10" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row11">
-                        <td>4763380</td>
-                        <td>2023/05/8 18:33</td>
-                        <td>VISA</td>
-                        <td><button id="b11" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row12">
-                        <td>9474037</td>
-                        <td>2023/06/23 11:16</td>
-                        <td>VISA</td>
-                        <td><button id="b12" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row13">
-                        <td>9474037</td>
-                        <td>2023/06/11 17:45</td>
-                        <td>VISA</td>
-                        <td><button id="b13" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row14">
-                        <td>4763380</td>
-                        <td>2023/07/1 19:07</td>
-                        <td>VISA</td>
-                        <td><button id="b14" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row15">
-                        <td>9474037</td>
-                        <td>2023/08/3 20:12</td>
-                        <td>VISA</td>
-                        <td><button id="b15" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row16">
-                        <td>4763380</td>
-                        <td>2023/09/22 12:14</td>
-                        <td>VISA</td>
-                        <td><button id="b16" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row17">
-                        <td>9474037</td>
-                        <td>2023/10/7 23:10</td>
-                        <td>VISA</td>
-                        <td><button id="b17" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row18">
-                        <td>9474037</td>
-                        <td>2023/11/14 1:06</td>
-                        <td>VISA</td>
-                        <td><button id="b18" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
-                    </tr>
-                    <tr id="row19">
-                        <td>4763380</td>
-                        <td>2023/12/16 14:56</td>
-                        <td>VISA</td>
-                        <td><button id="b19" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
-                                data-bs-target="#applicationModal">view application</button></td>
+                        <td>Personal</td>
+                        <td><button id="lb3" type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal2">view application</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -370,31 +265,31 @@
     <!-- end of main components -->
 
 
-    <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel"
+    <div class="modal fade" id="applicationModal2" tabindex="-1" aria-labelledby="applicationModalLabel2"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="applicationModalLabel">Credit Card Application Details</h5>
+                    <h5 class="modal-title" id="applicationModalLabel2"> Loan Application Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Name: <span id="appName"></span></p>
-                    <p>Client ID: <span id="empID"></span></p>
-                    <p>Employment Status: <span id="appEmploymentStatus"></span></p>
+                    <p>Name: <span id="lappName"></span></p>
+                    <p>Client ID: <span id="lempID"></span></p>
+                    <p>Employment Status: <span id="lappEmploymentStatus"></span></p>
                     <p>
                         Employment Verification PDF:
-                        <button type="button" id="pdfbutton" class="btn btn-outline-primary" onclick="openPDF()">Open
+                        <button type="button" id="lpdfbutton" class="btn btn-outline-primary" onclick="openPDF()">Open
                             PDF</button>
                     </p>
-                    <p>Date & Time: <span id="appDate"></span></p>
-                    <p>Card Type: <span id="appCardType"></span></p>
-                    <p hidden><span id="appID"></span></p>
+                    <p>Date & Time: <span id="lappDate"></span></p>
+                    <p>Card Type: <span id="lappCardType"></span></p>
+                    <p hidden><span id="lappID"></span></p>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark acceptance" data-bs-dismiss="modal">Accept</button>
-                    <button type="button" class="btn btn-dark acceptance" data-bs-dismiss="modal">Reject</button>
+                    <button type="button" class="btn btn-success lacceptance" data-bs-dismiss="modal">Accept</button>
+                    <button type="button" class="btn btn-success lacceptance" data-bs-dismiss="modal">Reject</button>
                 </div>
             </div>
         </div>
@@ -410,7 +305,7 @@
         crossorigin="anonymous"></script>
     <!--<script src="js/datatables-simple-demo.js"></script>-->
     <script src="js/ApplicationsData.js"></script>
-    <script src="js/creditcardApp.js"></script>
+    <script src="js/BankerApplicationsScript.js"></script>
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     -->
 </body>
