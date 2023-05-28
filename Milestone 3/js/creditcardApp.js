@@ -51,7 +51,7 @@ document.getElementById('applicationModal').addEventListener('show.bs.modal', fu
         var appEmploymentStatus = (empID == 4763380)? "Full-Time": "Unemployed"; // Example employment status
         var appDate = dates[id];
         var cardType = cardTypes[id];
-
+        
         // Populate the modal with the application details
         document.getElementById('appName').textContent = appName;
         document.getElementById('appEmploymentStatus').textContent = appEmploymentStatus;
@@ -59,6 +59,10 @@ document.getElementById('applicationModal').addEventListener('show.bs.modal', fu
         document.getElementById('empID').textContent = empID;
         document.getElementById('appCardType').textContent = cardType;
         document.getElementById('appID').textContent = id;
+        if(appEmploymentStatus == "Unemployed")
+            $("#pdfbutton").prop("disabled", true);
+        else
+            $("#pdfbutton").prop("disabled", false);
         // Add more code to populate other application details
 });
 

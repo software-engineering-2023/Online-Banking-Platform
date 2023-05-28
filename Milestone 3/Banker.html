@@ -100,7 +100,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav" style="margin-left: 90%;">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" class="navbarDarkDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle navbarDarkDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="assets/blackbell.png" width="20">
                         </a>
@@ -119,10 +119,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- Button to trigger the modal -->
-                <a href="Login.html" class="btn btn-dark">
-                    Logout
-                </a>
             </div>
         </div>
     </nav>
@@ -146,49 +142,40 @@
                             </div>
                             Overview
                         </a>
-                        <br>
-                        <div class="accordion accordion-flush blckbg" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header blckbg" id="flush-headingOne">
-                                    <button class="blckbg accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                        aria-expanded="false" aria-controls="flush-collapseOne">
-                                        <span class="bi-layout-text-sidebar-reverse"></span>
-                                        View Applications
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse blckbg"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="blckbg accordion-body ">
-                                        <a href="BankerCreditCardApplications.html">
-                                            <button type="button" class="btn btn-dark position-relative">
-                                                <span class="bi-credit-card-2-front"></span>
-                                                Credit Card Applications
-                                                <span
-                                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    20+
-                                                    <span class="visually-hidden">unread messages</span>
-                                                </span>
-                                            </button>
-                                        </a>
-                                        <br>
-                                        <a href="BankerLoanApplications.html">
-
-                                            <button type="button" class="btn btn-dark position-relative mt-3"
-                                                style="width: max-content;">
-                                                <span class="bi-layout-text-sidebar-reverse"></span>
-                                                Loan Applications
-                                                <span
-                                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                    4+
-                                                    <span class="visually-hidden">unread messages</span>
-                                                </span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <a class="nav-link collapsed" href="#" style="color:white;" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLoans" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="bi-layout-text-sidebar-reverse"></i></div>
+                            View Applications
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLoans" aria-labelledby="headingOne"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="BankerCreditCardApplications.html" style="color:white;">
+                                    Credit Card Applications
+                                    <span
+                                        class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                                        <span id="cardAppNo"></span>+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                                <a class="nav-link" href="BankerLoanApplications.html" style="color:white;">
+                                    <span class="bi-layout-text-sidebar-reverse"></span>
+                                    Loan Applications
+                                    <span
+                                        class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                                        <span id="loanAppNo"></span>+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                            </nav>
                         </div>
+                        <br>
+                        <!-- Button to trigger the modal -->
+                        <a href="Login.html" style="color: darkgrey; padding-left: 1rem;">
+                            Logout
+                        </a>
+
                     </div>
                 </div>
             </nav>
@@ -295,6 +282,8 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+    <script src="js/ApplicationsData.js"></script>
+    <script src="js/creditcardApp.js"></script>
 </body>
 
 </html>
