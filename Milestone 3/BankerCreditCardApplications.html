@@ -1,189 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>UA07 | Credit Card Applications</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/banker.css" rel="stylesheet" />
-        <link href="css/admin.css" rel="stylesheet" />
-        <link href="css/bootstrap.css" rel="styelsheet" />
-        <!-- Bootstrap Icons CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
-        <link rel="canonical" href="https://icons.getbootstrap.com/">
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <style>
-            hr {
-                margin-right: 5px;
-                margin-left: 5px;
-            }
-            h1{
-                color: black;
-            }
-            h2{
-                color: black;
-            }
-            h3{
-                color: black;
-            }
-            h4{
-                color:black;
-            }
-            h5{
-                color:black;
-            }
-            p{
-                color:black;
-            }
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>UA07 | Credit Card Applications</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/banker.css" rel="stylesheet" />
+    <link href="css/admin.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="canonical" href="https://icons.getbootstrap.com/">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        hr {
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        h2 {
+            color: black;
+        }
+
+        h3 {
+            color: black;
+        }
+
+        h4 {
+            color: black;
+        }
+
+        h5 {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 11;
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+            transform: translateX(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media only screen and (min-width: 1400px),
+        only screen and (min-width: 1200px) and (max-width: 1399px) {
             .overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.3);
-                z-index: 11;
-                -webkit-transform: translateX(-100%);
-                -moz-transform: translateX(-100%);
-                -ms-transform: translateX(-100%);
-                -o-transform: translateX(-100%);
-                transform: translateX(-100%);
-                opacity: 0;
-                visibility: hidden;
-                }
-                @media only screen and (min-width: 1400px), only screen and (min-width: 1200px) and (max-width: 1399px) {
-                .overlay {
-                    display: none;
-                }
-                }
-                @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-                .overlay.active {
-                    opacity: 1;
-                    visibility: visible;
-                    -webkit-transform: translateX(0);
-                    -moz-transform: translateX(0);
-                    -ms-transform: translateX(0);
-                    -o-transform: translateX(0);
-                    transform: translateX(0);
-                }
-                .blckbg {
-                    background-color: black;
-                    color: white;
-                }
-                
+                display: none;
             }
-        </style>
-    </head>
-    <body class="sb-nav-fixed">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:rgb(255, 255, 255); margin-bottom: 20px; border-style: solid; border-width: thin; border-color:rgb(228, 224, 219);">
-            <div class="container px-5">
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav" style="margin-left: 90%;">
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" class="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        }
+
+        @media only screen and (min-width: 992px) and (max-width: 1199px),
+        only screen and (min-width: 768px) and (max-width: 991px),
+        (max-width: 767px) {
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+                -ms-transform: translateX(0);
+                -o-transform: translateX(0);
+                transform: translateX(0);
+            }
+
+            .blckbg {
+                background-color: black;
+                color: white;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color:rgb(255, 255, 255); margin-bottom: 20px; border-style: solid; border-width: thin; border-color:rgb(228, 224, 219);">
+        <div class="container px-5">
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav" style="margin-left: 90%;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="assets/blackbell.png" width="20">
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto; background-color: rgb(0, 0, 0);" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li class="dropdown-item"><a class ="notification" href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Eneen on June 23rd, 2023 @ 11:59 pm</a></li>
-                            <li class="dropdown-item"><a class = "notification" href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Kheer on June 25th, 2023 @ 11:59 pm</a></li>
-                            <li class="dropdown-item"><hr></li>
+                        <ul class="dropdown-menu dropdown-menu-dark"
+                            style="right: 0; left: auto; background-color: rgb(0, 0, 0);"
+                            aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li class="dropdown-item"><a class="notification"
+                                    href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Eneen on
+                                    June 23rd, 2023 @ 11:59 pm</a></li>
+                            <li class="dropdown-item"><a class="notification"
+                                    href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Kheer on
+                                    June 25th, 2023 @ 11:59 pm</a></li>
+                            <li class="dropdown-item">
+                                <hr>
+                            </li>
                         </ul>
-                        </li>
-                    </ul>
-                    <!-- Button to trigger the modal -->
-                    <a href="Login.html" class="btn btn-dark">
-                        Logout
-                    </a>
-                </div>
+                    </li>
+                </ul>
+                <!-- Button to trigger the modal -->
+                <a href="Login.html" class="btn btn-dark">
+                    Logout
+                </a>
             </div>
-        </nav>
-        <br>
-        <!-- Start of side bar -->
-        <aside id="layoutSidenav" style="color:white">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion" id="sidenavAccordion" style="background-color:rgb(0, 0, 0); color:white;">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading" style="padding-top:2px">
-                                <a href="Banker.html"><img src="assets/Logo.png" width="160"></a>
-                            </div>
-                            <br>
-                            <a class="nav-link" href="Banker.html" style="color:white;">
-                                <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
-                                </svg>
-                                </div>
-                                Overview
-                            </a>
-                            <br>
-                            <div class="accordion accordion-flush blckbg" id="accordionFlushExample" >
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header blckbg" id="flush-headingOne">
-                                    <button class="blckbg accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                        <span class="bi-layout-text-sidebar-reverse"></span>
-                                        View Applications
-                                    </button>
-                                  </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse blckbg" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="blckbg accordion-body ">
-                                        <a href="BankerCreditCardApplications.html" >
-                                            <button type="button" class="btn btn-dark position-relative">
-                                                <span class="bi-credit-card-2-front"></span>
-                                                Credit Card Applications
-                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                20+
-                                                <span class="visually-hidden">unread messages</span>
-                                                </span>
-                                            </button>
-                                        </a>
-                                        <br>
-                                        <a href="BankerLoanApplications.html" >
-                                            
-                                            <button type="button" class="btn btn-dark position-relative mt-3" style="width: max-content;">
-                                                <span class="bi-layout-text-sidebar-reverse"></span>
-                                                Loan Applications
-                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                4+
-                                                <span class="visually-hidden">unread messages</span>
-                                                </span>
-                                            </button>
-                                        </a>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- Start of side bar -->
+    <aside id="layoutSidenav" style="color:white">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion" id="sidenavAccordion" style="background-color:rgb(0, 0, 0); color:white;">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading" style="padding-top:2px">
+                            <a href="Banker.html"><img src="assets/Logo.png" width="160"></a>
                         </div>
+                        <br>
+                        <a class="nav-link" href="Banker.html" style="color:white;">
+                            <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                                </svg>
+                            </div>
+                            Overview
+                        </a>
+                        <a class="nav-link collapsed" href="#" style="color:white;" data-bs-toggle="collapse" data-bs-target="#collapseLoans" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="bi-layout-text-sidebar-reverse"></i></div>
+                            View Applications
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLoans" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="BankerCreditCardApplications.html" style="color:white;">
+                                    Credit Card Applications
+                                        <span
+                                            class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                                            20+
+                                            <span class="visually-hidden">unread messages</span>
+                                        </span>
+                                </a>
+                                <a class="nav-link" href="BankerLoanApplications.html" style="color:white;">
+                                    <span class="bi-layout-text-sidebar-reverse"></span>
+                                    Loan Applications
+                                    <span
+                                        class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                                        4+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                            </nav>
+                        </div>
+                        <br>
+                        
                     </div>
-                </nav>
-            </div>
-        </aside>
-        <!-- end of side bar -->
+                </div>
+            </nav>
+        </div>
+    </aside>
+    <!-- end of side bar -->
 
 
 
-        <div class="overlay"></div>
-        <!-- start of main components     -->
-        <section class="section">
-            <div class="container-fluid">
+    <div class="overlay"></div>
+    <!-- start of main components     -->
+    <section class="section">
+        <div class="container-fluid">
             <!-- ========== title-wrapper start ========== -->
             <div class="title-wrapper pt-30">
                 <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="title mb-30">
-                    <h2>Credit Card Applications</h2>
+                    <div class="col-md-6">
+                        <div class="title mb-30">
+                            <h2>Credit Card Applications</h2>
+                        </div>
                     </div>
-                </div>
-                <!-- end col -->
+                    <!-- end col -->
                 </div>
                 <!-- end row -->
             </div>
             <!-- ========== title-wrapper end ========== -->
 
-            <table id="datatablesSimple" style="color:black; outline: none;">
+            <table class="table table-hover" style="color:black; outline: none;">
                 <thead>
                     <tr>
                         <th>Client ID</th>
@@ -191,158 +209,186 @@
                         <th>View</th>
                     </tr>
                 </thead>
-                <tfoot>
+                <!--<tfoot>
                     <tr>
                         <th>Client ID</th>
                         <th>Date and Time</th>
                         <th>View</th>
                     </tr>
-                </tfoot>
+                </tfoot>-->
                 <tbody>
-                    <tr>
+                    <tr id="row0" class="myrow">
                         <td>4763380</td>
-                        <td>2022/04/20 17:03</td>
-                        <td><button type="button" class="btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#applicationModal">view application</button></td>
+                        <td>2022/04/19 14:30</td>
+                        <td><button id = "b0" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row1">
+                        <td>9474037</td>
                         <td>2022/04/20 17:30</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b1" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row2">
                         <td>4763380</td>
                         <td>2022/04/24 18:20</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b2" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row3">
+                        <td>9474037</td>
                         <td>2022/04/27 11:25</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b3" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row4">
                         <td>4763380</td>
                         <td>2022/04/28 12:35</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b4" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row5">
+                        <td>9474037</td>
                         <td>2023/04/29 02:26</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b5" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row6">
                         <td>4763380</td>
                         <td>2023/05/1 16:04</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b6" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row7">
+                        <td>9474037</td>
                         <td>2023/05/2 15:30</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b7" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row8">
                         <td>4763380</td>
                         <td>2023/05/3 19:02</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b8" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row9">
                         <td>4763380</td>
                         <td>2023/05/6 13:04</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b9" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row10">
+                        <td>9474037</td>
                         <td>2023/05/7 19:02</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b10" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row11">
                         <td>4763380</td>
                         <td>2023/05/8 18:33</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b11" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row12">
+                        <td>9474037</td>
                         <td>2023/06/23 11:16</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b12" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row13">
+                        <td>9474037</td>
                         <td>2023/06/11 17:45</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b13" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row14">
                         <td>4763380</td>
                         <td>2023/07/1 19:07</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b14" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row15">
+                        <td>9474037</td>
                         <td>2023/08/3 20:12</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b15" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row16">
                         <td>4763380</td>
                         <td>2023/09/22 12:14</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b16" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row17">
+                        <td>9474037</td>
                         <td>2023/10/7 23:10</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b17" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
-                        <td>4763380</td>
+                    <tr id="row18">
+                        <td>9474037</td>
                         <td>2023/11/14 1:06</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b18" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
-                    <tr>
+                    <tr id="row19">
                         <td>4763380</td>
                         <td>2023/12/16 14:56</td>
-                        <td><button type="button" class="btn btn-outline-info">view application</button></td>
+                        <td><button id = "b19" type="button" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#applicationModal">view application</button></td>
                     </tr>
                 </tbody>
             </table>
 
 
-            </div>
-            </div>
-        </section>
-        <!-- end of main components -->
+        </div>
+    </section>
+    <!-- end of main components -->
 
 
-        <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="applicationModalLabel">Credit Card Application Details</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Name:  <span id="appName"></span></p>
-                        <p>Client ID: <span id="empID"></span></p>
-                        <p>Employment Status: <span id="appEmploymentStatus"></span></p>
-                        <p>
-                            Employment Verification PDF:
-                            <button type="button" class="btn btn-outline-primary" onclick="openPDF()">Open PDF</button>
-                        </p> 
-                        <p>Date & Time: <span id="appDate"></span></p>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Accept</button>
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Reject</button>
-                    </div>
+    <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applicationModalLabel">Credit Card Application Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Name: <span id="appName"></span></p>
+                    <p>Client ID: <span id="empID"></span></p>
+                    <p>Employment Status: <span id="appEmploymentStatus"></span></p>
+                    <p>
+                        Employment Verification PDF:
+                        <button type="button" class="btn btn-outline-primary" onclick="openPDF()">Open PDF</button>
+                    </p>
+                    <p>Date & Time: <span id="appDate"></span></p>
+                    <p>Card limit: <span id="appCardLimit"></span></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                        onclick="acceptOrRejectApp(0)">Accept</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                        onclick="acceptOrRejectApp(0)">Reject</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
-        <script src="js/creditcardApp.js"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <!--<script src="js/datatables-simple-demo.js"></script>-->
+    <script src="js/ApplicationsData.js"></script>
+    <script src="js/creditcardApp.js"></script>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    -->
+</body>
+
 </html>
