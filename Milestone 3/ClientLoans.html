@@ -183,7 +183,7 @@
                             <label for="exampleFormControlSelect1">Select one of your accounts below for payment</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                                 <option>Bank Account (Number): 485296501033 </option>
-                                <option>Bank Account (Number): 678915289011 </option>
+                                <option>Bank Account (Number): 393398591033 </option>
                             </select>
                         </div>
                     </form>
@@ -205,7 +205,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Payment successful.
+                        <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                            Payment successful.
+                        </div>
                     </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
@@ -218,11 +220,13 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel4" style="color: red;">Failed !</h5>
+                        <h5 class="modal-title" id="exampleModalLabel4">Failed !</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Insufficient Balance. Transaction failed !
+                        <div class="alert alert-danger" role="alert" style="margin-bottom:0">
+                            Payment failed. Insufficient balance !
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
