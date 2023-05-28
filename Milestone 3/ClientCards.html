@@ -191,7 +191,7 @@
                                 <br>
                                 <div class="container" style="padding-top: 4%">
                                     <div>
-                                        <button  id="reportButton" type="button" class="btn" style="background-color:rgb(60, 60, 60); color:white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button  id="reportButton" type="button" class="btn" style="background-color:black; color:white" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             Report Stolen/Damaged/Lost
                                         </button>
                                     </div>
@@ -201,7 +201,26 @@
                                         <p id="reportSubmittedMessage" class="text-muted" style="visibility: hidden; padding-left:2px"><small>Report submitted and is under review.</small></p>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                                 </div>
+                                <div class="container">
+                                    <img src ="assets/goldcard2.png" width="390">
+                                </div>
+                                <large class="text-muted" style="margin-left:1%;"><strong>TEMPORARILY FROZEN*</strong> for security reasons, contact us.</large>
                             </div>
                             <!--end of col-->
                             </div>
@@ -209,7 +228,7 @@
                     </div>
                 </div>
         
-                <div style="float: right; width: 60%; margin-top: 6%;">
+                <div style="float: right; width: 100%; margin-top: 6%;">
                     <div id="reportalert" class="alert alert-success alert-dismissable" style="display:none;">
                         Your report was submitted successfully.
                     </div>
@@ -388,21 +407,34 @@
                                 </div>
                             </div>
                             <!--end of col-->
+
+                            <div style="display: flex; justify-content: center;">
+                                <hr style="width: 80%; margin-left: 10%;">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
                             </div>
                         </div>
                     </div>
                 </div>
         </aside>
-        <div style="display: flex; justify-content: center;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="display: flex; justify-content:flex-start;">
             <hr style="width: 80%; margin-left: 10%;">
         </div>
         <br>
-        <div style="display: flex; justify-content: center; margin-left: 10%">
+        <div style="display: flex; justify-content: flex-start; margin-left: 275px">
             <img src="assets/graycard.png" width="390">
         </div>
         <br>
-        <div style="display: flex; justify-content: center; margin-left: 10%">
-            <button type="button" class="btn" style="background-color: rgb(60, 60, 60); color:white" onclick="location.href='ClientCardApplication.html';">Apply for a new Credit Card</button>
+        <div style="display: flex; justify-content: flex-start; margin-left: 290px">
+            <button type="button" class="btn" style="background-color: rgb(0, 0, 0); color:rgb(255, 255, 255)" onclick="location.href='ClientCardApplication.html';">Apply for a new Credit Card</button>
         </div>
         <br>
         <br>
@@ -492,14 +524,15 @@
                     <form class="needs-validation" id="payFullForm">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Select payment method</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select id="selectFull" class="form-control">
                         <option>Bank Account (Number): 485296501033 </option>
+                        <option>Bank Account (Number): 393398591033</option>
                         </select>
                     </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="payBillFully()">Pay Bill</button>
+                    <button type="button" class="btn btn-success" onclick="payBillFully()">Pay Bill</button>
                 </div>
             </div>
             </div>
@@ -526,8 +559,9 @@
                         <br>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Select payment method</label>
-                            <select class="form-control" id="exampleFormControlSelect1" required>
+                            <select class="form-control" id="selectPartial" required>
                               <option>Bank Account (Number): 485296501033 </option>
+                              <option>Bank Account (Number): 393398591033</option>
                             </select>
                         </div>
                         <div class="modal-footer">
@@ -539,7 +573,7 @@
             </div>
         </div>
 
-        <!-- Modal 2 for paying bill -->
+        <!-- Modal 2.1 for paying bill -->
         <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
@@ -550,6 +584,26 @@
                 <div class="modal-body">
                     <div class="alert alert-success" role="alert" style="margin-bottom:0">
                         Payment successful.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal 2.2 for paying bill -->
+        <div class="modal fade" id="exampleModal44" tabindex="-1" aria-labelledby="exampleModalLabel44" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel4">Failed</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert" style="margin-bottom:0">
+                        Payment failed. Your bank account has insufficient funds.
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -574,9 +628,10 @@
                     <br>
                     <form>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Select Destination Bank Account (Number):</label>
+                            <label for="exampleFormControlSelect1">Select Destination Bank Account</label>
                             <select class="form-control" id="exampleFormControlSelect1">
-                                <option>485296501033</option>
+                                <option>Bank Account (Number): 485296501033</option>
+                                <option>Bank Account (Number): 393398591033</option>
                             </select>
                         </div>
                     </form>
@@ -625,7 +680,8 @@
                     document.getElementById("reportSubmittedMessage").style.visibility = "visible";
                 }
             });
-
+        </script>
+        <script>
             var payPartialForm = document.getElementById("payPartialForm");
 
             payPartialForm.addEventListener("submit", function(e) {
@@ -635,43 +691,64 @@
                 console.log("Reached 0");
 
                 if (payPartialForm.checkValidity()){
-                    var billAmount = document.getElementById("billAmount").innerHTML;
-                    var paidAmount = document.getElementById("partialAmountInput").value;
-                    var balance = document.getElementById("balance").innerHTML;
-                    var result = billAmount - paidAmount;
+                    const selectElement = document.getElementById("selectPartial");
+                    const selectedOptionIndex = selectElement.selectedIndex;
+                    console.log(selectedOptionIndex);
 
-                    var numPaidAmount = Number(paidAmount);
-                    if (isNaN(numPaidAmount)){
-                        alert('Please enter a valid number.');
-                        return;
-                    }
+                    if (selectedOptionIndex == 0){
+                        var billAmount = document.getElementById("billAmount").innerHTML;
+                        var paidAmount = document.getElementById("partialAmountInput").value;
+                        var balance = document.getElementById("balance").innerHTML;
+                        var result = billAmount - paidAmount;
 
-                    $('#exampleModal33').modal('hide');
-                    $('#exampleModal4').modal('show');
+                        var numPaidAmount = Number(paidAmount);
+                        if (isNaN(numPaidAmount)){
+                            alert('Please enter a valid number.');
+                            return;
+                        }
 
-                    if (result <= 0){
-                        result = 0;
-                        // disable payment buttons
-                        document.getElementById("payBillFullyButton").disabled = true;
-                        document.getElementById("payBillPartiallyButton").disabled = true;
-                    }
+                        $('#exampleModal33').modal('hide');
+                        $('#exampleModal4').modal('show');
 
-                    document.getElementById("billAmount").innerHTML = result;
-                    document.getElementById("balance").innerHTML = -result;
-                    document.getElementById("totalBillAmountInFullModal").innerHTML = result;
-                    document.getElementById("totalBillAmountInPartialModal").innerHTML = result;
+                        if (result <= 0){
+                            result = 0;
+                            // disable payment buttons
+                            document.getElementById("payBillFullyButton").disabled = true;
+                            document.getElementById("payBillPartiallyButton").disabled = true;
+                        }
+
+                        document.getElementById("billAmount").innerHTML = result;
+                        document.getElementById("balance").innerHTML = -result;
+                        document.getElementById("totalBillAmountInFullModal").innerHTML = result;
+                        document.getElementById("totalBillAmountInPartialModal").innerHTML = result;
+                    } else {
+                        $('#exampleModal33').modal('hide');
+                        $('#exampleModal44').modal('show');
+                    } 
                 }
             });
 
             function payBillFully() {
-                // disable payment buttons
-                document.getElementById("payBillFullyButton").disabled = true;
-                document.getElementById("payBillPartiallyButton").disabled = true;
+                const selectElement = document.getElementById("selectFull");
+                const selectedOptionIndex = selectElement.selectedIndex;
+                console.log(selectedOptionIndex);
 
-                document.getElementById("billAmount").innerHTML = "0";
-                document.getElementById("balance").innerHTML = "0";
-                document.getElementById("totalBillAmountInFullModal").innerHTML = "0";
-                document.getElementById("totalBillAmountInPartialModal").innerHTML = "0";
+                $("#exampleModal3").modal("hide");
+                
+                if (selectedOptionIndex == 0) {
+                    $("#exampleModal4").modal("show");
+
+                    // disable payment buttons
+                    document.getElementById("payBillFullyButton").disabled = true;
+                    document.getElementById("payBillPartiallyButton").disabled = true;
+
+                    document.getElementById("billAmount").innerHTML = "0";
+                    document.getElementById("balance").innerHTML = "0";
+                    document.getElementById("totalBillAmountInFullModal").innerHTML = "0";
+                    document.getElementById("totalBillAmountInPartialModal").innerHTML = "0";
+                } else {
+                    $("#exampleModal44").modal("show");
+                }
             }
 
             function redeemPoints(){
