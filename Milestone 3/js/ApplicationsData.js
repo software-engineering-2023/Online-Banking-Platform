@@ -1,5 +1,6 @@
 var AppsNocard = 20;
 var AppsNoloan = 4;
+var replacementsApp = 9;
 
 var clientIDs = [4763380,9474037,4763380,9474037,4763380
                 ,9474037,4763380,9474037,4763380,4763380
