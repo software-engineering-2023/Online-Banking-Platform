@@ -13,10 +13,6 @@
         <link href="css/bootstrap.css" rel="styelsheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <style>
-            hr {
-                margin-right: 5px;
-                margin-left: 5px;
-            }
             h1{
                 color: black;
             }
@@ -66,6 +62,10 @@
                     -o-transform: translateX(0);
                     transform: translateX(0);
                 }
+            }
+            :focus {
+                outline: 0 !important;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
             }
         </style>
     </head>
@@ -174,11 +174,27 @@
                         </button></h3>
                         <div class="accordion-collapse collapse" id="collapseTwo2" aria-labelledby="headingTwo" style="color:black;" data-bs-parent="#accordionExample2">
                             <div class="accordion-body">
-                                <strong>Due Amount: </strong><p id="billAmount">5785.00</p>
-                                <strong>Currency: </strong><p>EGP</p>
-                                <strong>Due Date: </strong><p>2023/06/28 at 11:59 pm</p>
-                                <button type="button" id="payBillFullyButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">Pay Bill Fully</button>
-                                <button type="button" id="payBillPartiallyButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal33">Pay Bill Partially</button>
+                                <strong style="font-size:20px">Due Amount: </strong><p id="electricityBillAmount" style="font-size:18px">1220.00</p>
+                                <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
+                                <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/23 at 11:59 pm</p>
+                                <hr style="margin-left: 0%; margin-right: 0%">
+                                <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
+                                <button type="button" class="btn btn-secondary" id="electricityBankAccountButton" onclick="initializePayBillByBankAccount(event)">Pay through Bank Account</button>
+                                <button id="electricityCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
+                                <div style="margin-top: 3%"></div>
+                                <strong style="font-size: 20px; margin-bottom: 0"><p>Or pay via one of our third-party partnered apps</p></strong>
+                                <a href="https://www.paypal.com/" id="linkPayPalElectricity" style="text-decoration:none;">
+                                    <img src="assets/PayPal-Logo.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.fawry.com/" id="linkFawryElectricity" style="text-decoration:none;">
+                                    <img src="assets/fawry.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.verifone.com/" id="linkVerifoneElectricity" style="text-decoration:none;">
+                                    <img src="assets/Verifone-Logo.png" height="100" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.myfatoorah.com/" id="linkMyFatoorahElectricity" style="text-decoration:none;">
+                                    <img src="assets/myFatooraLogo.jpg" height="120" style="margin-right: 10px;">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -191,10 +207,27 @@
                         </button></h3>
                         <div class="accordion-collapse collapse" id="collapseThree2" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
                             <div class="accordion-body">
-                                <strong>Credit Card Points: </strong><p id="points">2000</p>
-                                <strong>Worth: </strong><p id="worth">200</p>
-                                <strong>Currency: </strong><p>EGP</p>
-                                <button type="button" id="redeemButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal5">Redeem for Cashback</button>
+                                <strong style="font-size:20px">Due Amount: </strong><p id="waterBillAmount" style="font-size:18px">360.00</p>
+                                <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
+                                <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/29 at 11:59 pm</p>
+                                <hr style="margin-left: 0%; margin-right: 0%">
+                                <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
+                                <button id="waterBankAccountButton" onclick="initializePayBillByBankAccount(event)" data-bs-target="#exampleModal1" data-bs-toggle="modal" type="button" class="btn btn-secondary">Pay through Bank Account</button>
+                                <button id="waterCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
+                                <div style="margin-top: 3%"></div>
+                                <strong style="font-size: 20px; margin-bottom: 0"><p>Or pay via one of our third-party partnered apps</p></strong>
+                                <a href="https://www.paypal.com/" id="linkPayPalWater" style="text-decoration:none;">
+                                    <img src="assets/PayPal-Logo.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.fawry.com/" id="linkFawryWater" style="text-decoration:none;">
+                                    <img src="assets/fawry.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.verifone.com/" id="linkVerifoneWater" style="text-decoration:none;">
+                                    <img src="assets/Verifone-Logo.png" height="100" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.myfatoorah.com/" id="linkMyFatoorahWater" style="text-decoration:none;">
+                                    <img src="assets/myFatooraLogo.jpg" height="120" style="margin-right: 10px;">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -207,10 +240,27 @@
                         </button></h3>
                         <div class="accordion-collapse collapse" id="collapseOne2" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
                             <div class="accordion-body">
-                                <strong>Credit Card Points: </strong><p id="points">2000</p>
-                                <strong>Worth: </strong><p id="worth">200</p>
-                                <strong>Currency: </strong><p>EGP</p>
-                                <button type="button" id="redeemButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal5">Redeem for Cashback</button>
+                                <strong style="font-size:20px">Due Amount: </strong><p id="telephoneBillAmount" style="font-size:18px">200.00</p>
+                                <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
+                                <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/30 at 11:59 pm</p>
+                                <hr style="margin-left: 0%; margin-right: 0%">
+                                <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
+                                <button id="telephoneBankAccountButton" onclick="initializePayBillByBankAccount(event)" type="button" class="btn btn-secondary">Pay through Bank Account</button>
+                                <button id="telephoneCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
+                                <div style="margin-top: 3%"></div>
+                                <p style="font-size: x-large; margin-bottom: 0">Or pay via our third-party partnered apps</p>
+                                <a href="https://www.paypal.com/" id="linkPayPalTelephone" style="text-decoration:none;">
+                                    <img src="assets/PayPal-Logo.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.fawry.com/" id="linkFawryTelephone" style="text-decoration:none;">
+                                    <img src="assets/fawry.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.verifone.com/" id="linkVerifoneTelephone" style="text-decoration:none;">
+                                    <img src="assets/Verifone-Logo.png" height="100" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.myfatoorah.com/" id="linkMyFatoorahTelephone" style="text-decoration:none;">
+                                    <img src="assets/myFatooraLogo.jpg" height="120" style="margin-right: 10px;">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -223,10 +273,27 @@
                         </button></h3>
                         <div class="accordion-collapse collapse" id="collapseOne3" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
                             <div class="accordion-body">
-                                <strong>Credit Card Points: </strong><p id="points">2000</p>
-                                <strong>Worth: </strong><p id="worth">200</p>
-                                <strong>Currency: </strong><p>EGP</p>
-                                <button type="button" id="redeemButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal5">Gas</button>
+                                <strong style="font-size:20px">Due Amount: </strong><p id="gasBillAmount" style="font-size:18px">100.00</p>
+                                <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
+                                <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/30 at 11:59 pm</p>
+                                <hr style="margin-left: 0%; margin-right: 0%">
+                                <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
+                                <button id="gasBankAccountButton" onclick="initializePayBillByBankAccount(event)" type="button" class="btn btn-secondary">Pay through Bank Account</button>
+                                <button id="gasCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
+                                <div style="margin-top: 3%"></div>
+                                <p style="font-size: x-large; margin-bottom: 0">Or pay via our third-party partnered apps</p>
+                                <a href="https://www.paypal.com/" id="linkPayPalGas" style="text-decoration:none;">
+                                    <img src="assets/PayPal-Logo.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.fawry.com/" id="linkFawryGas" style="text-decoration:none;">
+                                    <img src="assets/fawry.png" height="80" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.verifone.com/" id="linkVerifoneGas" style="text-decoration:none;">
+                                    <img src="assets/Verifone-Logo.png" height="100" style="margin-right: 10px;">
+                                </a>
+                                <a href="https://www.myfatoorah.com/" id="linkMyFatoorahGas" style="text-decoration:none;">
+                                    <img src="assets/myFatooraLogo.jpg" height="120" style="margin-right: 10px;">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -237,7 +304,370 @@
         <!-- end of side bar -->
         <div class="overlay">
         </div>
-        
+
+        <!-- Bank Account Starting Payment Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="bankAccountModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Total Bill Amount: </strong><span id="bankAccountModalBillAmount">0.00</span> EGP</p>
+                    <br>
+                    <form class="needs-validation" id="payFullForm">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select bank account to pay with</label>
+                        <select id="selectAccount" class="form-control" id="exampleFormControlSelect1">
+                        <option>Bank Account (Number): 485296501033 </option>
+                        <option>Bank Account (Number): 393398591033</option>
+                        </select>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="finalizeBankAccountPayment()">Pay Bill</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Bank Account Payment Successful Modal -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Payment successful.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Bank Account Payment Unsuccessful Modal -->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Failed</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert" style="margin-bottom:0">
+                        Payment failed. Your bank account has insufficient funds.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Credit Card Starting Payment Modal -->
+        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="creditCardModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Total Bill Amount: </strong><span id="creditCardModalBillAmount">0.00</span> EGP</p>
+                    <br>
+                    <form class="needs-validation" id="payFullForm">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select credit card to pay with</label>
+                        <select id = "selectCard" class="form-control" id="exampleFormControlSelect1">
+                        <option>*** **** **** 3945</option>
+                        <option>*** **** **** 3941</option>
+                        </select>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="finalizeCreditCardPayment()">Pay Bill</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Credit Card Payment Successful Modal -->
+        <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success" role="alert" style="margin-bottom:0">
+                        Payment successful.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Credit Card Payment Unsuccessful Modal -->
+        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Failed</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert" style="margin-bottom:0">
+                        Payment failed. Your credit card has exceeded its limit.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <script>
+            function initializePayBillByBankAccount(event) {
+                const buttonID = event.target.id;
+                if (buttonID === "electricityBankAccountButton") {
+                    document.getElementById("bankAccountModalTitle").innerHTML = "Pay electricity bill through bank account";
+                    document.getElementById("bankAccountModalBillAmount").innerHTML = document.getElementById("electricityBillAmount").innerHTML;
+                } else if (buttonID === "waterBankAccountButton") {
+                    document.getElementById("bankAccountModalTitle").innerHTML = "Pay water bill through bank account";
+                    document.getElementById("bankAccountModalBillAmount").innerHTML = document.getElementById("waterBillAmount").innerHTML;
+                } else if (buttonID === "telephoneBankAccountButton") {
+                    document.getElementById("bankAccountModalTitle").innerHTML = "Pay telephone bill through bank account";
+                    document.getElementById("bankAccountModalBillAmount").innerHTML = document.getElementById("telephoneBillAmount").innerHTML;
+                } else if (buttonID === "gasBankAccountButton") {
+                    document.getElementById("bankAccountModalTitle").innerHTML = "Pay gas bill through bank account";
+                    document.getElementById("bankAccountModalBillAmount").innerHTML = document.getElementById("gasBillAmount").innerHTML;
+                } else {
+                    console.log("Unknown button clicked in bankaccount function");
+                    return;
+                }
+                $("#exampleModal1").modal("show");
+            }
+
+
+            function initializePayBillByCreditCard(){
+                const buttonID = event.target.id;
+                if (buttonID === "electricityCreditCardButton") {
+                    document.getElementById("creditCardModalTitle").innerHTML = "Pay electricity bill through credit card";
+                    document.getElementById("creditCardModalBillAmount").innerHTML = document.getElementById("electricityBillAmount").innerHTML;
+                } else if (buttonID === "waterCreditCardButton") {
+                    document.getElementById("creditCardModalTitle").innerHTML = "Pay water bill through credit card";
+                    document.getElementById("creditCardModalBillAmount").innerHTML = document.getElementById("waterBillAmount").innerHTML;
+                } else if (buttonID === "telephoneCreditCardButton") {
+                    document.getElementById("creditCardModalTitle").innerHTML = "Pay telephone bill through credit card";
+                    document.getElementById("creditCardModalBillAmount").innerHTML = document.getElementById("telephoneBillAmount").innerHTML;
+                } else if (buttonID === "gasCreditCardButton") {
+                    document.getElementById("creditCardModalTitle").innerHTML = "Pay gas bill through credit card";
+                    document.getElementById("creditCardModalBillAmount").innerHTML = document.getElementById("gasBillAmount").innerHTML;
+                } else {
+                    console.log("Unknown button clicked in creditcard function");
+                    return;
+                }
+                $("#exampleModal4").modal("show");
+            }
+
+
+            function finalizeBankAccountPayment() {
+                const selectElement = document.getElementById("selectAccount");
+                const selectedOptionIndex = selectElement.selectedIndex;
+                
+                $("#exampleModal1").modal("hide");
+
+                // if first account selected, complete the payment
+                if (selectedOptionIndex == 0) {
+                    $("#exampleModal2").modal("show");
+
+                    const billType = document.getElementById("bankAccountModalTitle").innerHTML
+                    if (billType == "Pay electricity bill through bank account") {
+                        document.getElementById("electricityBillAmount").innerHTML = "0.00"
+                        document.getElementById("electricityBankAccountButton").disabled = true;
+                        document.getElementById("electricityCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkFawryElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahElectricity").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay water bill through bank account") {
+                        document.getElementById("waterBillAmount").innerHTML = "0.00"
+                        document.getElementById("waterBankAccountButton").disabled = true;
+                        document.getElementById("waterCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalWater").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryWater").href = "javascript:void(0)";
+                        document.getElementById("linkFawryWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneWater").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahWater").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahWater").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay telephone bill through bank account") {
+                        document.getElementById("telephoneBillAmount").innerHTML = "0.00"
+                        document.getElementById("telephoneBankAccountButton").disabled = true;
+                        document.getElementById("telephoneCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkFawryTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahTelephone").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay gas bill through bank account") {
+                        document.getElementById("gasBillAmount").innerHTML = "0.00"
+                        document.getElementById("gasBankAccountButton").disabled = true;
+                        document.getElementById("gasCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalGas").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryGas").href = "javascript:void(0)";
+                        document.getElementById("linkFawryGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneGas").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahGas").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahGas").style.filter = "grayscale(100%)";
+
+                    } else { 
+                        console.log("what is this");
+                        return;
+                    }
+                } else {
+                    $("#exampleModal3").modal("show");
+                }
+            }
+
+
+            function finalizeCreditCardPayment() {
+                const selectElement = document.getElementById("selectCard");
+                const selectedOptionIndex = selectElement.selectedIndex;
+                
+                $("#exampleModal4").modal("hide");
+
+                // if first account selected, complete the payment
+                if (selectedOptionIndex == 0) {
+                    $("#exampleModal5").modal("show");
+
+                    const billType = document.getElementById("creditCardModalTitle").innerHTML
+                    if (billType == "Pay electricity bill through credit card") {
+                        document.getElementById("electricityBillAmount").innerHTML = "0.00"
+                        document.getElementById("electricityBankAccountButton").disabled = true;
+                        document.getElementById("electricityCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkFawryElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneElectricity").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahElectricity").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahElectricity").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay water bill through credit card") {
+                        document.getElementById("waterBillAmount").innerHTML = "0.00"
+                        document.getElementById("waterBankAccountButton").disabled = true;
+                        document.getElementById("waterCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalWater").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryWater").href = "javascript:void(0)";
+                        document.getElementById("linkFawryWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneWater").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneWater").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahWater").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahWater").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay telephone bill through credit card") {
+                        document.getElementById("telephoneBillAmount").innerHTML = "0.00"
+                        document.getElementById("telephoneBankAccountButton").disabled = true;
+                        document.getElementById("telephoneCreditCardButton").disabled = true;
+
+                        document.getElementById("telephoneBillAmount").innerHTML = "0.00"
+                        document.getElementById("telephoneBankAccountButton").disabled = true;
+                        document.getElementById("telephoneCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkFawryTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneTelephone").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahTelephone").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahTelephone").style.filter = "grayscale(100%)";
+
+                    } else if (billType == "Pay gas bill through credit card") {
+                        document.getElementById("gasBillAmount").innerHTML = "0.00"
+                        document.getElementById("gasBankAccountButton").disabled = true;
+                        document.getElementById("gasCreditCardButton").disabled = true;
+
+                        document.getElementById("linkPayPalGas").href = "javascript:void(0)";
+                        document.getElementById("linkPayPalGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkFawryGas").href = "javascript:void(0)";
+                        document.getElementById("linkFawryGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkVerifoneGas").href = "javascript:void(0)";
+                        document.getElementById("linkVerifoneGas").style.filter = "grayscale(100%)";
+
+                        document.getElementById("linkMyFatoorahGas").href = "javascript:void(0)";
+                        document.getElementById("linkMyFatoorahGas").style.filter = "grayscale(100%)";
+
+                    } else { 
+                        console.log("what is this 2");
+                        return;
+                    }
+                } else {
+                    $("#exampleModal6").modal("show");
+                }
+            }
+        </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
@@ -250,8 +680,6 @@
         </script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
