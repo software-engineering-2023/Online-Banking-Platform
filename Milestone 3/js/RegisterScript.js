@@ -49,3 +49,27 @@ function showErrorAlert() {
 
 // Add event listener to the form on submit
 form.addEventListener('submit', submitForm);
+
+// Get the radio buttons and input fields
+const bankAccountYes = document.getElementById('bankAccountYes');
+const bankAccountNo = document.getElementById('bankAccountNo');
+const accountNumberSection = document.getElementById('accountNumberSection');
+const passwordSection = document.getElementById('passwordSection');
+const bankAccountTypeSection = document.getElementById('bankAccountTypeSection');
+
+// Add event listeners to the radio buttons
+bankAccountYes.addEventListener('change', function() {
+  if (this.checked) {
+    accountNumberSection.style.display = 'block';
+    passwordSection.style.display = 'block';
+    bankAccountTypeSection.style.display = 'none';
+  }
+});
+
+bankAccountNo.addEventListener('change', function() {
+  if (this.checked) {
+    accountNumberSection.style.display = 'none';
+    passwordSection.style.display = 'none';
+    bankAccountTypeSection.style.display = 'block';
+  }
+});
