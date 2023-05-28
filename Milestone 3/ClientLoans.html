@@ -139,7 +139,7 @@
                                             <strong>Current Installement Amount: </strong><p id="billAmount">50,000.00</p>
                                             <strong>Currency: </strong><p>EGP</p>
                                             <strong>Due Date: </strong><p>2023/06/28 at 11:59 pm</p>
-                                            <button type="button" id="payBillFullyButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">Pay Installement</button>
+                                            <button type="button" id="pay-installement" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">Pay Installement</button>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-target="#exampleModal4" data-bs-toggle="modal" onclick="payInstallement()">Pay</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="payInstallement()">Pay</button>
                 </div>
             </div>
             </div>
@@ -197,20 +197,37 @@
 
 
         <!-- Modal 2 for paying bill -->
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+        <div class="modal fade" id="success-payment" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
             <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel4">Success!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Payment successful.
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel4">Success!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Payment successful.
+                    </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="failing-payment" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel4" style="color: red;">Failed !</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Insufficient Balance. Transaction failed !
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
             </div>
         </div>
 
