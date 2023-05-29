@@ -82,6 +82,7 @@ function showDeleteAlert(announcement) {
     icon: "warning",
     showCancelButton: true,
     confirmButtonText: "Delete",
+    confirmButtonColor: "#1f1e1d",
     cancelButtonText: "Cancel",
     dangerMode: true
   }).then((result) => {
