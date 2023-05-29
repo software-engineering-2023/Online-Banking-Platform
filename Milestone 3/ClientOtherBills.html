@@ -70,19 +70,22 @@
         </style>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:rgb(255, 255, 255); margin-bottom: 20px; border-style: solid; border-width: thin; border-color:rgb(228, 224, 219);">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:rgb(255, 255, 255);">
             <div class="container px-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav" style="margin-left: 100%; margin-right: 0;">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="ClientOverview.html" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="assets/blackbell.png" width="20">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto; background-color: rgb(0, 0, 0);" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li class="dropdown-item">Electricity bill due on June 23rd, 2023 @ 11:59 pm</li>
-                            <li class="dropdown-item">Loan payment due on June 26rd, 2023 @ 11:59 pm</li>
                             <li class="dropdown-item">Credit Card bill due on June 28th, 2023 @ 11:59 pm</li>
-                            <li class="dropdown-item"><hr></li>
+                            <li class="dropdown-item">Loan payment due on June 26th, 2023 @ 11:59 pm</li>
+                            <li class="dropdown-item">Electricity bill due on June 23rd, 2023 @ 11:59 pm</li>
+                            <hr>
                             <li><a class="dropdown-item" href="ClientNotifications.html">View all notifications</a></li>
                         </ul>
                         </li>
@@ -177,7 +180,12 @@
                                 <strong style="font-size:20px">Due Amount: </strong><p id="electricityBillAmount" style="font-size:18px">1220.00</p>
                                 <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
                                 <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/23 at 11:59 pm</p>
+                                <br>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reminderModal">
+                                    Set Reminder
+                                </button>
                                 <hr style="margin-left: 0%; margin-right: 0%">
+                                <br>
                                 <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
                                 <button type="button" class="btn btn-secondary" id="electricityBankAccountButton" onclick="initializePayBillByBankAccount(event)">Pay through Bank Account</button>
                                 <button id="electricityCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
@@ -210,7 +218,12 @@
                                 <strong style="font-size:20px">Due Amount: </strong><p id="waterBillAmount" style="font-size:18px">360.00</p>
                                 <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
                                 <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/29 at 11:59 pm</p>
+                                <br>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reminderModal">
+                                    Set Reminder
+                                </button>
                                 <hr style="margin-left: 0%; margin-right: 0%">
+                                <br>
                                 <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
                                 <button id="waterBankAccountButton" onclick="initializePayBillByBankAccount(event)" data-bs-target="#exampleModal1" data-bs-toggle="modal" type="button" class="btn btn-secondary">Pay through Bank Account</button>
                                 <button id="waterCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
@@ -243,7 +256,12 @@
                                 <strong style="font-size:20px">Due Amount: </strong><p id="telephoneBillAmount" style="font-size:18px">200.00</p>
                                 <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
                                 <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/30 at 11:59 pm</p>
+                                <br>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reminderModal">
+                                    Set Reminder
+                                </button>
                                 <hr style="margin-left: 0%; margin-right: 0%">
+                                <br>
                                 <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
                                 <button id="telephoneBankAccountButton" onclick="initializePayBillByBankAccount(event)" type="button" class="btn btn-secondary">Pay through Bank Account</button>
                                 <button id="telephoneCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
@@ -276,7 +294,12 @@
                                 <strong style="font-size:20px">Due Amount: </strong><p id="gasBillAmount" style="font-size:18px">100.00</p>
                                 <strong style="font-size:20px">Currency: </strong><p style="font-size:18px">EGP</p>
                                 <strong style="font-size:20px">Due Date: </strong><p style="font-size:18px">2023/06/30 at 11:59 pm</p>
+                                <br>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reminderModal">
+                                    Set Reminder
+                                </button>
                                 <hr style="margin-left: 0%; margin-right: 0%">
+                                <br>
                                 <strong style="font-size: 20px;"><p>Pay directly through our bank</p></strong>
                                 <button id="gasBankAccountButton" onclick="initializePayBillByBankAccount(event)" type="button" class="btn btn-secondary">Pay through Bank Account</button>
                                 <button id="gasCreditCardButton" onclick="initializePayBillByCreditCard(event)" type="button" class="btn btn-secondary">Pay through Credit Card</button>
@@ -441,7 +464,82 @@
             </div>
         </div>
 
+        <!-- Reminder Modal -->
+        <div class="modal fade" id="reminderModal" tabindex="-1" aria-labelledby="reminderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="reminderModalLabel">Set Reminder</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reminderForm" class="needs-validation" novalidate>
+                        <div class="modal-body">
+                          <p>Select a date and time for your reminder:</p>
+                          <input type="datetime-local" id="reminderDateTime" name="reminderDateTime" class="form-control" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid date and time for your reminder.
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <button type="submit" class="btn btn-primary">Set Reminder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
 
+        <!-- Reminder Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <div class="alert alert-success" role="alert">
+                    Your reminder has been set successfully.
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script>
+            var reminderForm = document.getElementById('reminderForm');
+            var reminderDateTime = document.getElementById('reminderDateTime');
+
+            reminderForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (!reminderForm.checkValidity()) {
+                // If the form is not valid, show the validation error message
+                reminderDateTime.classList.add('is-invalid');
+                return;
+            }
+
+            // Store reminder date and time in local storage (or wherever you want to store it)
+            localStorage.setItem('reminder', reminderDateTime.value);
+            console.log('Reminder set for: ' + reminderDateTime.value);
+
+            // Close the modal
+            $('#reminderModal').modal('hide');
+
+            // Open the success modal
+            $('#successModal').modal('show');
+            });
+
+            reminderDateTime.addEventListener('input', function() {
+            if (reminderDateTime.classList.contains('is-invalid')) {
+                reminderDateTime.classList.remove('is-invalid');
+            }
+            });
+        </script>
         <script>
             function initializePayBillByBankAccount(event) {
                 const buttonID = event.target.id;
