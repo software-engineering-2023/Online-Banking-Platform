@@ -67,6 +67,10 @@
                     transform: translateX(0);
                 }
             }
+            :focus {
+                outline: 0 !important;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+            }
         </style>
     </head>
     <body class="sb-nav-fixed">
@@ -164,12 +168,12 @@
         <div id="layoutSidenav_content" style="margin-top: 0%">
             <p style="text-align: center; font-size: 50px; margin-top: 2%">Overview</p>
             <div class="row" style="width: 95%; height: 100%;">
-                <div style="float: left; width: 20%;">
+                <div style="float: left; width: 5%;">
                     <!-- Empty col on the left side -->
                 </div>
                 <div style="float: left; width: 30%;">
                     <div class="container" style="margin-top: 20px;">
-                        <p style="font-size: 35px; font-weight: 500; margin-left: 1%; color:rgb(59, 59, 59)">My cards</p>
+                        <p style="font-size: 35px; font-weight: 500; margin-left: 1%; color:rgb(59, 59, 59)">Cards</p>
                         <div style="margin-bottom: 1%;">
                             <img src ="assets/goldcard.png" width="390">
                         </div>
@@ -178,6 +182,98 @@
                     <div class="container" style="margin-top: 20px;">
                         <div class="alert alert-light" role="alert" style="width: 390px">
                             <button type="button" class="btn btn-dark" style="margin-left: 17%" onclick="location.href='ClientCardApplication.html';">Apply for a new Credit Card</button>
+                        </div>
+                    </div>
+                    <hr style="color:black;">
+                    <br>
+                    <br>
+                    <div class="accordion mb-5" style="padding-top: 5px" id="accordionExample2">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button collapsed" style="background-color:rgb(0, 0, 0); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2" style="color:black; background-color:white">Recent Card Transactions</button></h3>
+                            <div class="accordion-collapse collapse" id="collapseOne2" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <table id="datatablesSimple" style="color:black; outline: none;">
+                                        <thead>
+                                            <tr>
+                                                <th>Card Number</th>
+                                                <th>Amount</th>
+                                                <th>Currency</th>
+                                                <th>Merchant Name</th>
+                                                <th>Date and Time</th>
+                                                <th>Balance after Transaction</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Card Number</th>
+                                                <th>Amount</th>
+                                                <th>Currency</th>
+                                                <th>Merchant Name</th>
+                                                <th>Date and Time</th>
+                                                <th>Balance after Transaction</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>650.00</td>
+                                                <td>EGP</td>
+                                                <td>Taiyaki</td>
+                                                <td>2023/05/1 16:04</td>
+                                                <td>-800.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>175.00</td>
+                                                <td>EGP</td>
+                                                <td>Chillout 90</td>
+                                                <td>2023/05/2 15:30</td>
+                                                <td>-975.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>1050.00</td>
+                                                <td>EGP</td>
+                                                <td>Steam</td>
+                                                <td>2023/05/3 19:02</td>
+                                                <td>-2025.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>320.00</td>
+                                                <td>EGP</td>
+                                                <td>Origin</td>
+                                                <td>2023/05/6 13:04</td>
+                                                <td>-2345.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>900.00</td>
+                                                <td>EGP</td>
+                                                <td>L'Aroma</td>
+                                                <td>2023/05/7 19:02</td>
+                                                <td>-3245.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>140.00</td>
+                                                <td>EGP</td>
+                                                <td>Costa Coffee</td>
+                                                <td>2023/05/8 18:33</td>
+                                                <td>-3385.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>154394874163945</td>
+                                                <td>2400.00</td>
+                                                <td>EGP</td>
+                                                <td>Nike</td>
+                                                <td>2023/05/10 14:16</td>
+                                                <td>-5785.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
