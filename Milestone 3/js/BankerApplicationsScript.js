@@ -88,7 +88,7 @@ document.getElementById('applicationModal').addEventListener('show.bs.modal', fu
         // Get the application details from the button's data attributes or other sources
         var empID = clientIDs[id];
         var appName = (empID == 4763380)?"AbuElKheir": "Andrew Mostafa Tate"; // Example application name
-        var appEmploymentStatus = (empID == 4763380)? "Full-Time": "Unemployed"; // Example employment status
+        var appEmploymentStatus = (empID == 4763380)? "Full-Time": "Part-Time"; // Example employment status
         var appDate = dates[id];
         var cardType = cardTypes[id];
         
