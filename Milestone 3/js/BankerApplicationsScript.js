@@ -119,6 +119,7 @@ document.getElementById('applicationModal2').addEventListener('show.bs.modal', f
         var lappEmploymentStatus = (lempID == 4763380)? "Full-Time": "Part-Time"; // Example employment status
         var lappDate = dates[lid];
         var loanType = loanTypes[lid];
+        var loanAm = loanAmounts[lid];
         
         // Populate the modal with the application details
         document.getElementById('lappName').textContent = lappName;
@@ -127,6 +128,7 @@ document.getElementById('applicationModal2').addEventListener('show.bs.modal', f
         document.getElementById('lempID').textContent = lempID;
         document.getElementById('apploanType').textContent = loanType;
         document.getElementById('lappID').textContent = lid;
+        document.getElementById('apploanAmount').textContent = loanAm;
         if(lappEmploymentStatus == "Unemployed")
             $("#pdfbutton").prop("disabled", true);
         else

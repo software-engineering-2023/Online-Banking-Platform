@@ -25,6 +25,8 @@ var cardNums = ['4024007181477273', '4024629602922312',
 
 var loanTypes = ['Personal','Mortage','Mortage','Personal'];
 
+var loanAmounts = [15000, 50000, 300000, 25000];
+
 var showrow = [true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true
