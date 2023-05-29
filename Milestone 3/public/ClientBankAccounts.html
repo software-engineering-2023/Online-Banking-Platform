@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>UA07 | Bank Accounts</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/client.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="styelsheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        
+        <style>
+            /* .accordion-header {
+                --bs-accordion-button-active-color: black;
+                --bs-accordion-icon-active-color: black;
+                --bs-accordion-button-: black;
+                --bs-accordion-icon-color: black;
+ 
+            }
+            .accordion-button:focus,.accordion-header:focus {
+                 box-shadow: none;
+                 background-color: ;
+                
+            } */
+            
+            .accordion-button {
+                background-color: grey;
+                color: white;
+                
+                }
+
+                
+                .accordion-button:not(.collapsed) {
+                background-color: black;
+                color: white;
+                
+                }
+
+                /* Remove border and box-shadow from accordion buttons */
+                
+              tbody,tr,td,.column1,.column2,  .column3,  .column4,  .column4,  .column5,.column6{
+                border:none;
+                font-weight: normal;
+                
+            } 
+            hr {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            h1{
+                color: black;
+            }
+            h2{
+                color: black;
+            }
+            h3{
+                color: black;
+            }
+            h4{
+                color:black;
+            }
+            h5{
+                color:black;
+            }
+            p{
+                color:black;
+            }
+            :focus {
+                outline: 0 !important;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.3);
+                z-index: 11;
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -ms-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                }
+                @media only screen and (min-width: 1400px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+                .overlay {
+                    display: none;
+                }
+                }
+                @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+                .overlay.active {
+                    opacity: 1;
+                    visibility: visible;
+                    -webkit-transform: translateX(0);
+                    -moz-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                    -o-transform: translateX(0);
+                    transform: translateX(0);
+                }
+            }
+        </style>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:rgb(255, 255, 255);">
+            <div class="container px-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/blackbell.png" width="20">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto; background-color: rgb(0, 0, 0);" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li class="dropdown-item">Credit Card bill due on June 28th, 2023 @ 11:59 pm</li>
+                            <li class="dropdown-item">Loan payment due on June 26th, 2023 @ 11:59 pm</li>
+                            <li class="dropdown-item">Electricity bill due on June 23rd, 2023 @ 11:59 pm</li>
+                            <hr>
+                            <li><a class="dropdown-item" href="ClientNotifications.html">View all notifications</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-dark" style="background-color:black" onclick="location.href='Home.html';">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Start of side bar -->
+        <aside id="layoutSidenav" style="color:white">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion" id="sidenavAccordion" style="background-color:rgb(0, 0, 0); color:white;">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading" style="padding-top:2px">
+                                <a href="ClientOverview.html"><img src="assets/Logo.png" width="160"></a>
+                            </div>
+                            <div class="sb-sidenav-menu-heading" style="padding-top:2px">Services</div>
+                            <a class="nav-link" href="ClientOverview.html" style="color:white;">
+                                <div class="sb-nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                    <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                                </svg>
+                                </div>
+                                Overview
+                            </a>
+                            <a class="nav-link collapsed" href="#" style="color:white;" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-regular fa-credit-card"></i></div>
+                                Cards
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="ClientCards.html" style="color:white;">My Cards</a>
+                                    <a class="nav-link" href="ClientCardApplication.html" style="color:white;">Apply for New Card</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" style="color:white;" data-bs-toggle="collapse" data-bs-target="#collapseAccounts" aria-expanded="false" aria-controls="collapseAccounts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Accounts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseAccounts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="ClientBankAccounts.html" style="color:white;">My Accounts</a>
+                                    <a class="nav-link" href="ClientOpenBankAccount.html" style="color:white;">Open New Account</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" style="color:white;" data-bs-toggle="collapse" data-bs-target="#collapseLoans" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                                Loans
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLoans" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="ClientLoans.html" style="color:white;">My Loans</a>
+                                    <a class="nav-link" href="ClientLoanApplication.html" style="color:white;">Apply for New Loan</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="ClientOtherBills.html" style="color:white;">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-receipt"></i>
+                                </div>
+                                Other Bills
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Assistance</div>
+                            <a class="nav-link" href="ClientReportTechnicalIssue.html" style="color:white;">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bug"></i></div>
+                                Report Technical Issue
+                            </a>
+                            <br>
+                            <hr>
+                            <a class="nav-link" href="HarmonyPortal.html" style="color:white">
+                                <img src="assets/voice-control.png" style="height: 25px; margin-right:3%">
+                                Neo<strong style="margin-left: 2%"> BETA</strong>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+        <!-- end of side bar -->
+        <div class="overlay">
+        </div>
+        
+        <div id="layoutSidenav_content" style="margin-left: 14%; margin-top: 3%">
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Bank Accounts</h1>
+                        <p class="lead fw-normal text-muted mb-0">How can we help you?</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="">
+                           
+                            <br>
+                            <br>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header"  id="headingOne"><button  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  >Savings Account :  485296501033</button></h3>
+                                    <div class="accordion-collapse collapse show " id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body" style="width: 100%; border-collapse: collapse;">
+                                            <div style="display: flex;">
+                                                <div class="balance-label" style="font-size: larger;margin-right: 0.5rem;">Current balance</div>
+                                                <div id="money1" class="balance-amount" style="font-size: larger;margin-right: 0.2rem;color: green;">900000</div>
+                                                <div class="balance-amount" style="font-size: larger;margin-right: 0.5rem">EGP</div>
+                                                <div id="icon-container1"></div>
+                                            </div>
+                                          <br>
+                                          <br>
+                                            <div style="text-align:center ;font-size: larger; color:black">Transactions</div>
+                                            <br>
+                                            <table id="table" class="table table-striped">
+                                            
+                                                    <thead style="color:black;" >
+                                                    <tr >
+                                                    <th class="column1" style="color:black;">Date</th>
+                                                    <th class="column2"style="color:black;">Account No.</th>
+                                                    <th class="column3" style="color:black;">Name</th>
+                                                    <th class="column4" style="color:black;">Amount</th>
+                                                    <th class="column5" style="color:black;">Type</th>
+                                                    <th class="column6" style="color:black;">Reason</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody style="border:none">
+                                                    <tr>
+                                                    <td  class="column1">2017-09-29 01:22</td>
+                                                    <td class="column2">200339827298</td>
+                                                    <td class="column3">German University</td>
+                                                    <td class="column4">10000.00 EGP</td>
+                                                    <td class="column5">Withdraw</td>
+                                                    <td class="column6">Tuition Fees</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td class="column1">2017-09-28 05:57</td>
+                                                    <td class="column2">600339827298</td>
+                                                    <td class="column3">CIB bank Account</td>
+                                                    <td class="column4">4756.00 EGP</td>
+                                                    <td class="column5">Withdraw</td>
+                                                    <td class="column6">Investment</td>
+                                                    </tr>
+                                                    <tr>
+                                                    <td class="column1">2017-09-26 05:57</td>
+                                                    <td class="column2">700373827298</td>
+                                                    <td class="column3">Amazon</td>
+                                                    <td class="column4">122.00 EGP</td>
+                                                    <td class="column5">Deposit</td>
+                                                    <td class="column6">Refund</td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                                
+                                              </table>
+
+                                              <div style="display: flex;justify-content: space-between;">
+                                                <button id="t1"style="margin-right: 5rem;color: white;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+                                                  Make a transfer
+                                                </button>
+                                                <button id="c1" style="color: white;"type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#close">
+                                                  Close Account
+                                                </button>
+                                              </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Checking Account :  393398591033 </button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div style="display: flex;">
+                                                <div class="balance-label" style="font-size: larger;margin-right: 0.5rem;">Current balance</div>
+                                                <div id="money2" class="balance-amount" style="font-size: larger;margin-right: 0.2rem;color: green;">100000</div>
+                                                <div class="balance-amount" style="font-size: larger;margin-right: 0.5rem">EGP</div>
+                                                <div id="icon-container2"></div>
+                                            </div>
+                                          <br>
+                                          <br>
+                                          <div style="text-align:center ;font-size: larger; color:black">Transactions</div>
+                                          <br>
+                                                   <table id="table2" class="table table-striped">
+                                                        <thead >
+                                                        <tr>
+                                                        <th class="column1"  style="color:black;">Date</th>
+                                                        <th class="column2" style="color:black;">Account No.</th>
+                                                        <th class="column3"  style="color:black;">Name</th>
+                                                        <th class="column4" style="color:black;">Amount</th>
+                                                        <th class="column5"  style="color:black;">Type</th>
+                                                        <th class="column6" style="color:black;">Reason</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody style="border:none">
+                                                        <tr>
+                                                        <td class="column1">2017-09-29 01:22</td>
+                                                        <td class="column2">200339827298</td>
+                                                        <td class="column3">German University</td>
+                                                        <td class="column4">10000.00 EGP</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Tuition Fees</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-28 05:57</td>
+                                                        <td class="column2">600339827298</td>
+                                                        <td class="column3">CIB bank Account</td>
+                                                        <td class="column4">4756.00 EGP</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Investment</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-26 05:57</td>
+                                                        <td class="column2">700373827298</td>
+                                                        <td class="column3">Amazon</td>
+                                                        <td class="column4">122.00 EGP</td>
+                                                        <td class="column5">Deposit</td>
+                                                        <td class="column6">Refund</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                    
+                                                </table>
+                                                <div style="display: flex;justify-content: space-between;">
+                                                  <button id="t2"style="color: white; margin-right: 5rem;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+                                                    Make a transfer
+                                                  </button>
+                                                  <button id="c2" style="color: white;"type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#close2">
+                                                    Close Account
+                                                  </button>
+                                                </div>
+                                                 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" >Individual Retirement Account: 141937985910</button></h3>
+                                    <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div style="display: flex;">
+                                                <div class="balance-label" style="font-size: larger;margin-right: 0.5rem;">Current balance</div>
+                                                <div id ="money3"class="balance-amount" style="font-size: larger;margin-right: 0.2rem;color: green;" >40000</div>
+                                                <div class="balance-amount" style="font-size: larger;margin-right: 0.5rem">EGP</div>
+                                                <div id="icon-container3"></div>
+                                            </div>
+                                          <br>
+                                          <br>
+                                          
+                                          <div style="text-align:center ;font-size: larger; color:black">Transactions</div>
+                                          <br>
+                                                
+                                                <table id="table3" class="table table-striped">
+                                                        <thead style="color:black;">
+                                                        <tr>
+                                                        <th class="column1" >Date</th>
+                                                        <th class="column2" >Account No.</th>
+                                                        <th class="column3" >Name</th>
+                                                        <th class="column4" >Amount</th>
+                                                        <th class="column5">Type</th>
+                                                        <th class="column6">Reason</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody style="border:none">
+                                                        <tr>
+                                                        <td class="column1">2017-09-29 01:22</td>
+                                                        <td class="column2">200339827298</td>
+                                                        <td class="column3">German University</td>
+                                                        <td class="column4">10000.00 EGP</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Tuition Fees</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-28 05:57</td>
+                                                        <td class="column2">600339827298</td>
+                                                        <td class="column3">CIB bank Account</td>
+                                                        <td class="column4">4756.00 EGP</td>
+                                                        <td class="column5">Withdraw</td>
+                                                        <td class="column6">Investment</td>
+                                                        </tr>
+                                                        <tr>
+                                                        <td class="column1">2017-09-26 05:57</td>
+                                                        <td class="column2">700373827298</td>
+                                                        <td class="column3">Amazon</td>
+                                                        <td class="column4">122.00 EGP</td>
+                                                        <td class="column5">Deposit</td>
+                                                        <td class="column6">Refund</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                    
+                                                  </table>
+                                                
+                                                  <div style="display: flex;justify-content: space-between;">
+                                                    <button id="t3"style="color: white;margin-right: 5rem;" type="button" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModal10">
+                                                      Make a transfer
+                                                    </button>
+                                                    <button id="c3" style="color: white;"type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#close3">
+                                                      Close Account
+                                                    </button>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+       <!---kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk-->
+       <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModal10" aria-hidden="true" >
+        <div class="modal-dialog"  >
+          <div class="modal-content"  style="background-color: white;">
+            <div class="modal-header" >
+              <h5 class="modal-title" style="margin: auto;padding-left: 20%;"  id="exampleModal10">Choose Transfer Type <i class="fa-solid fa-money-bill-transfer fa-fade"></i></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="align-items: center;">
+                <div class="row" style="align-items: center;">
+                    <div class="button-container"  style=" align-items: center;display: flex;flex-direction: column; margin: 10px;">
+                     
+                      <p  style="text-align: center;">An internal bank transfer is a transfer of funds between accounts held within the same bank.</p>
+                      
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#internal" style="width: 50%;text-align: center;" class="btn btn-dark"> Internal transfer <i class="fa-solid fa-building-columns"></i></a>
+                    </div>
+                    <br>
+                    <div class="button-container" style=" align-items: center;display: flex;flex-direction: column;margin: 10px;;">
+                      
+                      <p style="text-align: center;">A domestic bank transfer is a transfer of funds between bank accounts held within the same country. </p>
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#domestic" style="width: 50%;text-align: center;" class="btn btn-dark"> Domestic transfer <i class="fa-solid fa-building"></i></a>
+                      <br>
+                    </div>
+                    <div class="button-container" style=" align-items: center;display: flex;flex-direction: column;margin: 10px;">
+                      
+                      <p style="text-align: center;">An international bank transfer is a transfer of funds between bank accounts held in different countries.</p>
+                      <a href="#" data-bs-toggle="modal" data-bs-target="#international"  style="width: 50%;text-align: center;" class="btn btn-dark"> International transfer <i class="fa-solid fa-earth-americas"></i></a>
+                    </div>
+                </div>
+                  
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <!---->
+      
+      <!---->
+     
+      <!---->
+      <div class="modal fade" id="close" tabindex="-1" aria-labelledby="close" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="close" >Close Bank Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="cl" class="row g-3 needs-validation " validate>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck" style="font-size: large;">
+                          I confirm that I want to close my account
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn yalla"  style="background-color: red;color: white;">Close Account</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+
+      <!---->
+      <div class="modal fade" id="close2" tabindex="-1" aria-labelledby="close2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="close2" >Close Bank Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="cl2" class="row g-3 needs-validation " validate>
+                    
+                    
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck" style="font-size: large;">
+                          I confirm that I want to close my account
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn yalla"  style="background-color: red;color: white;">Close Account</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+      <!---->
+      <div class="modal fade" id="close3" tabindex="-1" aria-labelledby="close3" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="close3" >Close Bank Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="cl3" class="row g-3 needs-validation " validate>
+                    
+                    
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck" style="font-size: large;">
+                          I confirm that I want to close my account
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn yalla"  style="background-color: red;color: white;">Close Account</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+      <!---->
+      <div class="modal fade" id="internal" tabindex="-1" aria-labelledby="internal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="internal" >Internal Transfer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="myForm" class="row g-3 needs-validation " validate>
+                    <div class="col-md-4">
+                      <label for="validationCustom01" name="name" class="form-label">Recipient's Name</label>
+                      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationCustom02" name="account" class="form-label">Bank Account</label>
+                      <input type="text" class="form-control" id="validationCustom02" value="10001200012" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="amount" class="form-label" >Amount</label>
+                        <input type="text" class="form-control" id="amount" value="10000" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" name="currency" class="form-label">Currency</label>
+                        <select class="form-select" id="validationCustom04" required>
+                          <option selected disabled value="">Choose currency type</option>
+                          
+                          <option>EGP</option>
+                      
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                    
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn btn-success">Confirm</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <!----->
+
+      <div class="modal fade" id="domestic" tabindex="-1" aria-labelledby="domestic" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="domestic" >Domestic Transfer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="myForm2" class="row g-3 needs-validation " validate>
+                    <div class="col-md-4">
+                      <label for="validationCustom10" name ="name" class="form-label">Reciever's Name</label>
+                      <input type="text" class="form-control" id="validationCustom10" value="Mark" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom11" name="bankName" class="form-label">Bank name</label>
+                        <input type="text" class="form-control" id="validationCustom11" value="" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationCustom12" name="account" class="form-label">Bank Account</label>
+                      <input type="text" class="form-control" id="validationCustom12" value="10001200012" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="amount2" name="amount" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="amount2" value="1" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom13" name="currency" class="form-label">Currency</label>
+                        <select class="form-select" id="validationCustom13" required>
+                          <option selected disabled value="">Choose currency type</option>
+                          
+                          <option>EGP</option>
+                          
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn btn-success">Confirm</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+      <!---->
+
+      
+      <div class="modal fade" id="international" tabindex="-1" aria-labelledby="international" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="international" >International Transfer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="myForm3" class="row g-3 needs-validation " validate>
+                    <div class="col-md-4">
+                      <label for="validationCustom15" name="name" class="form-label">Reciever's Name</label>
+                      <input type="text" class="form-control" id="validationCustom15" value="Mark" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>                             
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom20" name ="bankName" class="form-label">Bank Name</label>
+                        <input type="text" class="form-control" id="validationCustom20" value="" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom278" class="form-label">Bank Location</label>
+                        <input type="text" class="form-control" id="validationCustom278" value="" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom17" class="form-label">Bank BIC</label>
+                        <input type="text" class="form-control" id="validationCustom17" value="" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                    <div class="col-md-4">
+                      <label for="amount76543" name="account" class="form-label">Bank Account</label>
+                      <input type="text" class="form-control" id="amount76543" value="1000120001662" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label for="amount3" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="amount3" value="88" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom9999" name="currency" class="form-label">Currency</label>
+                        <select class="form-select" id="validationCustom9999" required>
+                          <option selected disabled value="">Choose currency type</option>
+                          
+                          <option>EGP</option>
+                          
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid state.
+                        </div>
+                      </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+                        <label class="form-check-label" for="invalidCheck3">
+                          Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button submit" class="btn btn-success">Confirm</button>
+                      </div>
+                  </form>
+                 
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      
+
+      <!---->
+      <div class="modal fade" style=" width:20%;position:fixed;bottom:0;left:0;margin:0;" id="success" tabindex="-1" aria-labelledby="success" aria-hidden="true">
+        <div class="modal-dialog" style=" width:20%;position:fixed;bottom:0;left:0;margin:0;" >
+          
+           
+                <div class="alert alert-success" role="alert">
+                    Money transfered successfully.
+                  </div>              
+           
+        </div>
+      </div>
+      <!---->
+      <div  style=" width:20%;position:fixed;bottom:0;left:0;margin:0;" class="modal fade" id="success2" tabindex="-1" aria-labelledby="success2" aria-hidden="true">
+        <div class="modal-dialog"  style=" width:20%;position:fixed;bottom:0;left:0;margin:0;">
+         
+            
+            <div class="modal-body">
+                <div class="alert alert-success" role="alert">
+                    Account  closed successfully
+                  </div>              
+            </div>
+           
+          
+        </div>
+      </div>
+      <!---->
+      <div class="modal fade" style=" width:20%;position:fixed;bottom:0;left:0;margin:0;" id="fail" tabindex="-1" aria-labelledby="fail" aria-hidden="true">
+        <div class="modal-dialog" style=" width:20%;position:fixed;bottom:0;left:0;margin:0;">
+          <div class="modal-content" style="background-color: white;">
+            <div class="modal-header">
+              <h5 class="modal-title" id="fail" >Close Account</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" role="alert">
+                    Insufficient funds: You don't have enough money to complete this transaction.
+                </div>              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+
+        
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+  
+     <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        includeHTML();
+        </script> 
+              
+      <script> 
+        const account1 = document.getElementById("t1");
+       const account2 = document.getElementById("t2");
+       const account3 = document.getElementById("t3");
+       var myID="";
+       // Get the first modal element
+   
+       // When the first button is clicked, open the first modal
+       account1.onclick = function() {
+         myID = account1.id
+         console.log(myID);
+         account1.onclick = arguments.callee;
+       }
+       account2.onclick = function() {
+           
+         myID = account2.id
+         console.log(myID);
+         account2.onclick = arguments.callee;
+       }
+       account3.onclick = function() {
+           
+         myID = account3.id
+         console.log(myID);
+         account3.onclick = arguments.callee;
+       }
+           
+          var reportForm2 = document.getElementById("myForm");
+   
+           reportForm2.addEventListener("submit", async function(e) {
+          await e.preventDefault();
+          await  e.stopPropagation();
+   
+       if (reportForm2.checkValidity()) {
+           console.log(myID)
+           var div;
+            var table;
+            if(myID=="t1"){
+                div =document.getElementById("money1");
+                table= document.getElementById("table");
+            }else if(myID=="t2"){
+               div =document.getElementById("money2");
+               table= document.getElementById("table2");
+               
+            }else if(myID=="t3"){
+               div = document.getElementById("money3");
+               table= document.getElementById("table3");
+            }
+       var numberInput =await document.getElementById("amount");
+   // Get the value of the number input as a number
+       var numberValue = await Number(numberInput.value);
+       // Get the div element by id
+      
+       // Get the text content of the div as a number
+       var divValue = await Number(div.textContent);
+       // Subtract the number input value from the div value
+       var result = await (divValue - numberValue);
+       // Check if the result is equal or greater than 0
+       if (result >= 0) {
+        
+
+		// Get the table body element
+		    const tableBody = table.tBodies[0];
+            const name = reportForm2.elements["validationCustom01"].value;
+			const acc = reportForm2.elements["validationCustom02"].value;
+			const amoun = reportForm2.elements["amount"].value;
+
+			// Create a new table row element
+			const newRow = await tableBody.insertRow();
+            tableBody.insertAdjacentElement('afterbegin', newRow);
+			// Add cells to the new row
+            const last = newRow.insertCell(0);
+            const reas = newRow.insertCell(0);
+            const amountCell = newRow.insertCell(0);
+			
+			const bankCell = newRow.insertCell(0);
+            const accCell = newRow.insertCell(0);
+			const time = newRow.insertCell(0);
+          
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var hh =  String(today.getHours()).padStart(2,'0');
+            var min =  String(today.getMinutes()).padStart(2,'0');
+
+            
+
+			// Set the cell values
+            last.textContent="investment";
+			reas.textContent="Withdraw";
+			amountCell.textContent = amoun+" EGP";
+            bankCell.textContent = "Internal";
+            accCell.textContent = acc;
+            time.textContent=yyyy+"-"+mm+"-"+dd+" "+hh+":"+min;
+           // Set the text content of the div to the result
+           div.textContent = await result;
+       await $('#internal').modal('hide');
+       await $('#success').modal('show');
+       await reportForm2.reset();
+       setTimeout(function() {$('#success').modal('hide');}, 1500);
+      } else {
+           // Do not accept submission and alert the user
+          await  $('#fail').modal('show');
+          setTimeout(function() {$('#fail').modal('hide');}, 1500);
+       }
+      
+   }
+   });
+     </script>
+     <script>
+        $('.yalla').on('click',function(){
+            setTimeout(function() {$('#success2').modal('hide');}, 1500);
+        });
+        $('.yalla').on('click',function(){
+           
+        });
+        
+         var reportForm3 = document.getElementById("myForm2");
+   
+            reportForm3.addEventListener ("submit",async function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (await reportForm3.checkValidity()) {
+            await console.log(myID)
+            var div;
+            var table;
+            if(myID=="t1"){
+                div =document.getElementById("money1");
+                table= document.getElementById("table");
+            }else if(myID=="t2"){
+               div =document.getElementById("money2");
+               table= document.getElementById("table2");
+               
+            }else if(myID=="t3"){
+               div = document.getElementById("money3");
+               table= document.getElementById("table3");
+            }
+            var numberInput =document.getElementById("amount2");
+            // Get the value of the number input as a number
+            var numberValue =Number(numberInput.value);
+            // Get the div element by id
+
+            // Get the text content of the div as a number
+            var divValue = Number(div.textContent);
+            // Subtract the number input value from the div value
+            var result = divValue - numberValue;
+            // Check if the result is equal or greater than 0
+            if (result >= 0) {
+                
+
+		// Get the table body element
+		const tableBody = table.tBodies[0];
+        const newRow = await tableBody.insertRow();
+        tableBody.insertAdjacentElement('afterbegin', newRow);
+        
+        const name = reportForm3.elements["validationCustom11"].value;
+			const acc = reportForm3.elements["validationCustom12"].value;
+			const amoun = reportForm3.elements["amount2"].value;
+
+			// Create a new table row element
+		
+			// Add cells to the new row
+            const last=newRow.insertCell(0);
+            const reas = newRow.insertCell(0);
+            const amountCell = newRow.insertCell(0);
+			
+			const bankCell = newRow.insertCell(0);
+            const accCell = newRow.insertCell(0);
+			const time = newRow.insertCell(0);
+          
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var hh =  String(today.getHours()).padStart(2,'0');
+            var min =  String(today.getMinutes()).padStart(2,'0');
+
+            
+
+			// Set the cell values
+            last.textContent="investment";
+			reas.textContent="Withdraw";
+			amountCell.textContent = amoun+" EGP";
+            bankCell.textContent =name
+            accCell.textContent = acc;
+            time.textContent=yyyy+"-"+mm+"-"+dd+" "+hh+":"+min;
+            // Set the text content of the div to the result
+            console.log(myID)
+             div.textContent = result;
+             await $('#domestic').modal('hide');
+            await $('#success').modal('show');
+                
+
+            await reportForm3.reset();
+            setTimeout(function() {$('#success').modal('hide');}, 1500);
+            } else {
+            // Do not accept submission and alert the user
+            $('#fail').modal('show');
+            setTimeout(function() {$('#fail').modal('hide');}, 1500);
+            }
+
+            }
+            });
+     </script>
+     <script>
+        var reportForm10 = document.getElementById("myForm3");
+  
+           reportForm10.addEventListener("submit", async function(e) {
+           e.preventDefault();
+           e.stopPropagation();
+
+           if (await reportForm10.checkValidity()) {
+           console.log(myID);
+           var div;
+            var table;
+            if(myID=="t1"){
+                div =document.getElementById("money1");
+                table= document.getElementById("table");
+            }else if(myID=="t2"){
+               div =document.getElementById("money2");
+               table= document.getElementById("table2");
+               
+            }else if(myID=="t3"){
+               div = document.getElementById("money3");
+               table= document.getElementById("table3");
+            }    
+            console.log(myID);
+           var numberInput = document.getElementById("amount3");
+           // Get the value of the number input as a number
+           var numberValue = Number(numberInput.value);
+           // Get the div element by id
+
+           // Get the text content of the div as a number
+           var divValue = Number(div.textContent);
+           // Subtract the number input value from the div value
+           var result = divValue - numberValue;
+           // Check if the result is equal or greater than 0
+           if (result >= 0) {
+            const tableBody = await table.tBodies[0];
+            const name = await reportForm10.elements["validationCustom20"].value;
+			const acc = await reportForm10.elements["amount76543"].value;
+			const amoun = await reportForm10.elements["amount3"].value;
+
+			// Create a new table row element
+			const newRow = await tableBody.insertRow();
+
+			// Add cells to the new row
+            
+           // Insert the new row at the beginning of the table
+           tableBody.insertAdjacentElement('afterbegin', newRow);
+            const last=newRow.insertCell(0);
+            const reas = newRow.insertCell(0);
+            const amountCell = newRow.insertCell(0);
+			
+			const bankCell = newRow.insertCell(0);
+            const accCell = newRow.insertCell(0);
+			const time = newRow.insertCell(0);
+          
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            var hh =  String(today.getHours()).padStart(2,'0');
+            var min =  String(today.getMinutes()).padStart(2,'0');
+
+            
+
+			// Set the cell values
+			
+			reas.textContent="Withdraw";
+			amountCell.textContent = amoun+" EGP";
+            bankCell.textContent =name;
+            accCell.textContent = acc;
+            time.textContent=yyyy+"-"+mm+"-"+dd+" "+hh+":"+min;
+            last.textContent="investment";
+           // Set the text content of the div to the result
+           div.textContent =await  result;
+           await $('#international').modal('hide');
+           await $('#success').modal('show');
+           await reportForm10.reset();
+           setTimeout(function() {$('#success').modal('hide');}, 1500);
+         
+           } else {
+           // Do not accept submission and alert the user
+           $('#fail').modal('show');
+           setTimeout(function() {$('#fail').modal('hide');}, 1500);
+           }
+
+           }
+           });
+    </script>
+    <script>
+        //
+        var reportForm4 = document.getElementById("cl");
+
+        reportForm4.addEventListener("submit", function(e) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (reportForm4.checkValidity()) {
+            $('#close').modal('hide');
+            reportForm4.reset();
+            $('#success2').modal('show');
+            var btn1 = document.getElementById("c1");
+            var btn2 = document.getElementById("t1");
+           
+            // Disable the other buttons
+            btn1.disabled = true;
+            btn2.disabled = true;
+            const iconContainer = document.getElementById("icon-container1");
+             iconContainer.innerHTML =  '<i class="fa fa-lock" style="font-size:24px"></i>';
+            document.getElementById("reportButton").disabled = true;
+            document.getElementById("reportSubmittedMessage").style.visibility = "visible";
+            
+        }else{
+            
+        }
+        });
+</script>
+<script>
+        var reportForm5 = document.getElementById("cl2");
+
+        reportForm5.addEventListener("submit", function(e) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (reportForm5.checkValidity()) {
+            $('#close2').modal('hide');
+            reportForm5.reset();
+            $('#success2').modal('show');
+            var btn1 = document.getElementById("c2");
+            var btn2 = document.getElementById("t2");
+           
+            // Disable the other buttons
+            btn1.disabled = true;
+            btn2.disabled = true;
+            const iconContainer = document.getElementById("icon-container2");
+            iconContainer.innerHTML = '<i class="fa fa-lock" style="font-size:24px"></i>';
+            document.getElementById("reportButton").disabled = true;
+            document.getElementById("reportSubmittedMessage").style.visibility = "visible";
+            
+        }
+        });
+    </script>
+    <script>
+
+        var reportForm6 = document.getElementById("cl3");
+
+        reportForm6.addEventListener("submit", function(e) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (reportForm6.checkValidity()) {
+            $('#close3').modal('hide');
+            reportForm6.reset();
+            $('#success2').modal('show');
+            var btn1 = document.getElementById("c3");
+            var btn2 = document.getElementById("t3");
+           
+            // Disable the other buttons
+            btn1.disabled = true;
+            btn2.disabled = true;
+            const iconContainer = document.getElementById("icon-container3");
+           iconContainer.innerHTML = '<i class="fa fa-lock" style="font-size:24px"></i>';
+            
+            document.getElementById("reportButton").disabled = true;
+            document.getElementById("reportSubmittedMessage").style.visibility = "visible";
+            
+        }
+        });
+         </script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+</html>

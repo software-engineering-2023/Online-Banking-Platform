@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "banking-system-388121",
+  "private_key_id": "ad5992b75c4ec9c25178aa3278e52535f91122f6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDHQI/sG21lwIor\nS7fPuAswbDkNnPcAQ81leDbopHO1OtJdAz55wzXdZ6I3M4cL34OMHF4vIHO95nij\nHCcuOgWS7ib2/AhMD0QggIoMNOGL+hnhRLbSbY1bf3otPp1/TLT9iDCA4LvyyAbZ\nxTkm+Kv3dpPDVg367QHfwnNjk3Ek5dWR49VEeBLvNQDhPirbYOJ8djyrIUzIp77I\nXeUM671CYqc6j0lvABppIQEsB24AOxe7HCBi04aWt79ULQwRzE5NdewutER8t7Uz\ndwxA3atupr9c5vp07eP8b7+jBAuHBX2kMBPsvyHk+2QdPmEEGmtcTvUUp8DokNHJ\nHC6cDPVpAgMBAAECggEAAqr5IlqtqM6eqvy9DdFziObyDp4a6ox93A1zgsLs77DF\nb0xjUkMMXhYMpHuSo9SO0NnyYuQm2JSU6e4vEh3hxDlfGTB/tfEAYwUFlCtDF9o1\n7X+7iO7BlUeMLb3oYvN2euyPZbJcoeAOw2yyGrT6rHoQeW2WC1WQEFxsqhknyywo\ni2UvICBWOP0DJkQMRBFgmzTwGhLpL5Nn97sEI2ToDCvdkEQbhs1zkmoUo0EtNUCL\ntl4Cq38zDZ9ILKDaEQxV3pqAk4KfIg24Jrejbt/JdxS3tHIWDnpG2HuAEBuiA34l\n3Sxzob0a/WyoVLSGo/8nybQ0cqozKBGOQfKW3sdVAQKBgQD/XhWJqqrAIVleBCSw\nV8iGJGhwTdFY89f7rXzfEwJiWBaNS0l7uHpvffdtFDIOcHYPZRhfgI3B8jpL3CiB\n7Xl8fBKzGzfC5hLnZlsgFjQ/PG6MS0wk8AKO0E6YRv12ubITzmaXDvlknhpKJKhm\nbWqHhCHw5eucqIi2YifwxzCCqQKBgQDHvuXrh0ml2sWR3Jq1jqOwDFXEe/Dqf+OW\nbeIVLDkplr1fecxa8LrySaQX3F+Fp3jmOmFj9pYgl45JDBEsYJiRp0TUbENIpgDJ\nlug9tCbqs/1Ut4TOpQ8fRWjodVmLk15lOCgRTisNNE+Yer4jR4osPIkpRXKHp4ll\ny1tHNKNUwQKBgQCXnEcTNaUsbmA9Zh5WJ7fglCsBSeIZeqPnQyfY1NNcicnR1zno\nXy0pllLYit3xHqmpGC8xPARteh9MPIg8Iz42Pv9nIKipaKkegvFlCmm4hWtolae+\nYlRSb6/JzpPa8gKcqbTUyEoeh5M6I6trLFjL3hG8kPSiTJjmFz55P/k4CQKBgQCd\nESGe2V0yTBt7nSsShT112909ifBhlXsS+QkEeSfh6iSzhQUKpa17hCjCkomSgaRx\n9YpLnsVij4pVKmX+rV6LeiqHlzI5WD/aRQ4OJzFK8YnNKhoGnIiNoHjkAhMNzC44\nDbaEFSGJWo8UacBF4aVnL5rzlyZ+QWGraAM4tM2SgQKBgQC5fMoSxZ0/kBzs94a4\n3LOBWaWd7GUB5JkojShnva1ai6fwZZ/clD6dFdZJHRAMspB3EDZHXSt8njSkLwmS\nmQqXTITTN3S00xhcB33nxvjdIzDVgyjYca9uTaV3iBBZZnHMscIFn2cLQkeHoEtM\niR0Oxozjno4HAY81Pq3xsZp+qw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "banking-system-388121@banking-system-388121.iam.gserviceaccount.com",
+  "client_id": "103155708567619097761",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/banking-system-388121%40banking-system-388121.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
