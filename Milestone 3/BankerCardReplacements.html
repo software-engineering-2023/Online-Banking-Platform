@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>UA07 | Banker Overview</title>
+    <title>UA07 | Loan Applications</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/banker.css" rel="stylesheet" />
     <link href="css/admin.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="styelsheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
     <!-- Bootstrap Icons CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="canonical" href="https://icons.getbootstrap.com/">
@@ -168,7 +168,6 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="BankerCreditCardApplications.html" style="color:white;">
-                                    <div class="sb-nav-link-icon"><i class="bi-credit-card-2-back-fill"></i></div>
                                     Credit Card Applications
                                     <span
                                         class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
@@ -199,9 +198,11 @@
         </div>
     </aside>
     <!-- end of side bar -->
+
+
+
     <div class="overlay"></div>
     <!-- start of main components     -->
-
     <section class="section">
         <div class="container-fluid">
             <!-- ========== title-wrapper start ========== -->
@@ -209,7 +210,18 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title mb-30">
-                            <h2>Banker Dashboard</h2>
+                            <figure>
+                                <blockquote class="blockquote">
+                                    <p class="display-4" style="padding-bottom: 1rem;">CreditCard Replacement Requests
+                                    </p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    Good Afternoon, You have <cite title="Source Title"><span
+                                            id="mainreplaceNo">9</span></cite> unresponded card replacement requests
+                                </figcaption>
+                            </figure>
+                            <div id="liveAlertPlaceholder"></div>
+                            <!--<button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>-->
                         </div>
                     </div>
                     <!-- end col -->
@@ -217,79 +229,129 @@
                 <!-- end row -->
             </div>
             <!-- ========== title-wrapper end ========== -->
-            <div class="row" style="margin-top: 50px;">
-                <div class="col-xl-9 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon orange">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-credit-card-2-back-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z" />
-                            </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Credit Cards Replacement Requests</h6>
-                            <h3 class="text-bold mb-10">9</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Icon Cart -->
-                </div>
-            </div>
-            <div class="row" style="margin-top: 50px;">
-                <!-- End Col -->
 
-                <div class="col-xl-5 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z" />
-                                <path
-                                    d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z" />
-                            </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Loan Applications</h6>
-                            <h3 class="text-bold mb-10">4</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Icon Cart -->
-                </div>
-                <!-- End Col -->
-                <div class="col-xl-5 col-lg-4 col-sm-6">
-                    <div class="icon-card mb-30">
-                        <div class="icon red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-credit-card-2-front" viewBox="0 0 16 16">
-                                <path
-                                    d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
-                                <path
-                                    d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class="content">
-                            <h6 class="mb-10">Credit Card Applications</h6>
-                            <h3 class="text-bold mb-10">20</h3>
-                            <p class="text-sm text-success">
-                                <span class="text-gray">(in 30 days)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- End Icon Cart -->
-                </div>
-                <!-- End Col -->
+            <table class="table">
+                <caption>List of Card Replacement Requests</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Client ID</th>
+                        <th scope="col">Date & Time</th>
+                        <th scope="col">Card Number</th>
+                        <th scope="col">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="rrow0">
+                        <th scope="row">*</th>
+                        <td>4763380</td>
+                        <td>2022/04/19 14:30</td>
+                        <td>4024007181477273</td>
+                        <td><button id="rb0" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow1">
+                        <th scope="row">*</th>
+                        <td>9474037</td>
+                        <td>2022/04/20 17:30</td>
+                        <td>4024629602922312</td>
+                        <td><button id="rb1" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow2">
+                        <th scope="row">*</th>
+                        <td>4763380</td>
+                        <td>2022/04/24 18:20</td>
+                        <td>5534690952786996</td>
+                        <td><button id="rb2" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow3">
+                        <th scope="row">*</th>
+                        <td>9474037</td>
+                        <td>2022/04/27 11:25</td>
+                        <td>4716634537150537</td>
+                        <td><button id="rb3" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow4">
+                        <th scope="row">*</th>
+                        <td>4763380</td>
+                        <td>2022/04/28 12:35</td>
+                        <td>4556013316504169</td>
+                        <td><button id="rb4" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow5">
+                        <th scope="row">*</th>
+                        <td>9474037</td>
+                        <td>2023/04/29 02:26</td>
+                        <td>5584697015902386</td>
+                        <td><button id="rb5" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow6">
+                        <th scope="row">*</th>
+                        <td>4763380</td>
+                        <td>2023/05/1 16:04</td>
+                        <td>5522581498931853</td>
+                        <td><button id="rb6" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow7">
+                        <th scope="row">*</th>
+                        <td>9474037</td>
+                        <td>2023/05/2 15:30</td>
+                        <td>5306707433047404</td>
+                        <td><button id="rb7" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                    <tr id="rrow8">
+                        <th scope="row">*</th>
+                        <td>4763380</td>
+                        <td>2023/05/3 19:02</td>
+                        <td>4716755619368323</td>
+                        <td><button id="rb8" type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#applicationModal">view request</button></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            </div>
+
         </div>
     </section>
     <!-- end of main components -->
+
+
+    <div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applicationModalLabel"> Card Replacement Request Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Name: <span id="rappName"></span></p>
+                    <p>Client ID: <span id="rempID"></span></p>
+                    <p>Date & Time: <span id="rappDate"></span></p>
+                    <p>Card Number: <span id="appCardNum"></span></p>
+                    <p>Card Type: <span id="appCardType"></span></p>
+                    <div class="mb-3">
+                        <label for="appreason" class="form-label">Reason:</label>
+                        <textarea class="form-control" rows="3" readonly id="appreason">lost hehe</textarea>
+                    </div>
+
+                    <p hidden><span id="rappID"></span></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info racceptance" id="acceptapp" data-bs-dismiss="modal">Accept</button>
+                    <button type="button" class="btn btn-info racceptance" id="rejectapp" data-bs-dismiss="modal">Reject</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -299,9 +361,11 @@
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"></script>
-    <script src="js/datatables-simple-demo.js"></script>
+    <!--<script src="js/datatables-simple-demo.js"></script>-->
     <script src="js/ApplicationsData.js"></script>
-    <script src="js/BankerApplicationsScript.js"></script>
+    <script src="js/BankerCardReplacement.js"></script>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    -->
 </body>
 
 </html>
