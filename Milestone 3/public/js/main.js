@@ -6,9 +6,10 @@ function launchVoiceRecognizer() {
 
     recognition.onresult = function(event) {
         const speechText = event.results[event.results.length - 1][0].transcript; // Use the last result in case of multiple results
-        if(! speechText) {
-            return;
-        }
+        console.log(speechText);
+        // if(! speechText) {
+        //     return;
+        // }
         fetch('/speech', {
             method: 'POST',
             headers: {
