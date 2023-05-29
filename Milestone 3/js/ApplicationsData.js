@@ -17,6 +17,12 @@ var cardTypes = ['Visa','Visa','Mastercard','Visa','Visa'
                 ,'Mastercard','Visa','Visa','Mastercard','Visa'
                 ,'Visa','Visa','Mastercard','Mastercard','Visa'];
 
+var cardNums = ['4024007181477273', '4024629602922312',
+                '5534690952786996', '4716634537150537',
+                '4556013316504169', '5584697015902386',
+'5522581498931853', '5306707433047404', '4716755619368323'];
+
+
 var loanTypes = ['Personal','Mortage','Mortage','Personal'];
 
 var showrow = [true,true,true,true,true
