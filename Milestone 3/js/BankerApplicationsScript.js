@@ -4,6 +4,7 @@ $(document).ready(function() {
     // loadData();
     $('#cardAppNo').text(AppsNocard);
     $('#loanAppNo').text(AppsNoloan);
+    $('#replacesNo').text(replacementsAppNo);
 
     for (var i = 0; i < clientIDs.length; ++i) {
         var row = $("#row" + i);
@@ -19,10 +20,11 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    // alert("Welcome to the Credit Card Application Page");
+    // alert("Welcome to the Loan Application Page");
     // loadData();
     $('#cardAppNo').text(AppsNocard);
     $('#loanAppNo').text(AppsNoloan);
+    $('#replacesNo').text(replacementsAppNo);
 
     for (var i = 0; i < clientIDs.length; ++i) {
         var row = $("#lrow" + i);

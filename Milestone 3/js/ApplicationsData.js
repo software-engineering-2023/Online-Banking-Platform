@@ -1,6 +1,6 @@
 var AppsNocard = 20;
 var AppsNoloan = 4;
-var replacementsApp = 9;
+var replacementsAppNo = 9;
 
 var clientIDs = [4763380,9474037,4763380,9474037,4763380
                 ,9474037,4763380,9474037,4763380,4763380
@@ -29,6 +29,16 @@ var showrow = [true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true
             ,true,true,true,true,true];
+
+
+var replaceReasons = ["Lost:: I misplaced my credit card and can't find it anywhere. I need a replacement card to ensure my account's security.",
+"Stolen:: Unfortunately, my credit card got stolen, and I'm worried about unauthorized charges. Please issue a new card for me.",
+"Damaged:: My credit card got damaged, and it's no longer functional. I would appreciate a replacement card at your earliest convenience.",
+"Expired:: I just realized that my credit card has expired. Could you kindly send me a new card with an updated expiration date?",
+"Stolen:: I noticed some suspicious transactions on my credit card statement. For safety reasons, I'd like to replace my card and investigate these charges.",
+"Expired:: I recently updated my address and contact information. It would be great if I could receive a new credit card with the updated details.",
+"Expired:: I legally changed my name, and I need a new credit card that reflects my updated name. Please assist me with this request.",
+"Stolen:: I'm concerned that there may have been a security breach involving my credit card information. As a precaution, I'd like to replace my card to ensure my financial safety."]
 
 // function loadData(){
 //     if (localStorage.getItem("AppsNocard") == null) {

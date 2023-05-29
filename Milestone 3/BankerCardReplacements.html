@@ -108,15 +108,22 @@
                             style="right: 0; left: auto; background-color: rgb(0, 0, 0);"
                             aria-labelledby="navbarDarkDropdownMenuLink">
                             <li class="dropdown-item"><a class="notification"
-                                    href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Eneen on
-                                    June 23rd, 2023 @ 11:59 pm</a></li>
+                                    href="BankerCardReplacements.html">CreditCard Replacement requested by Andrew
+                                    Mostafa Tate on May 30th, 2023 @ 01:30 pm</a></li>
                             <li class="dropdown-item"><a class="notification"
-                                    href="SystemAdminTechnicalIssues.html">Technical issue reported by Abo el Kheer on
-                                    June 25th, 2023 @ 11:59 pm</a></li>
+                                    href="BankerCreditCardApplications.html">CreditCard Application submitted by
+                                    AbulKheir
+                                    on May 30th, 2023 @ 12:30 pm</a></li>
+                            <li class="dropdown-item"><a class="notification" href="BankerLoanApplications.html">Loan
+                                    Application submitted by Andrew
+                                    Mostafa Tate on May 30th, 2023 @ 12:54 pm</a></li>
                             <li class="dropdown-item">
                                 <hr>
                             </li>
                         </ul>
+                        <button type="button" class="btn btn-dark" style="background-color:black" onclick="location.href='Home.html';">
+                            Logout
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -180,7 +187,7 @@
                         </div>
                         <br>
                         <!-- Button to trigger the modal -->
-                        <a href="Login.html" style="color: darkgrey; padding-left: 1rem;">
+                        <a href="Login.html" hidden style="color: darkgrey; padding-left: 1rem;">
                             Logout
                         </a>
 
@@ -204,7 +211,8 @@
                         <div class="title mb-30">
                             <figure>
                                 <blockquote class="blockquote">
-                                    <p class="display-4" style="padding-bottom: 1rem;">CreditCard Replacement Requests</p>
+                                    <p class="display-4" style="padding-bottom: 1rem;">CreditCard Replacement Requests
+                                    </p>
                                 </blockquote>
                                 <figcaption class="blockquote-footer">
                                     Good Afternoon, You have <cite title="Source Title"><span
@@ -317,25 +325,26 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="applicationModalLabel"> Loan Application Details</h5>
+                    <h5 class="modal-title" id="applicationModalLabel"> Card Replacement Request Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Name: <span id="rappName"></span></p>
                     <p>Client ID: <span id="rempID"></span></p>
                     <p>Date & Time: <span id="rappDate"></span></p>
-                    <p>Client ID: <span id="rempID"></span></p>
+                    <p>Card Number: <span id="appCardNum"></span></p>
+                    <p>Card Type: <span id="appCardType"></span></p>
                     <div class="mb-3">
-                        <label for="Textarea1" class="form-label">Reason:</label>
-                        <textarea class="form-control" id="Textarea1" rows="3" readonly id="appreason">lost hehe</textarea>
+                        <label for="appreason" class="form-label">Reason:</label>
+                        <textarea class="form-control" rows="3" readonly id="appreason">lost hehe</textarea>
                     </div>
 
-                    <p hidden><span id="lappID"></span></p>
+                    <p hidden><span id="rappID"></span></p>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success lacceptance" data-bs-dismiss="modal">Accept</button>
-                    <button type="button" class="btn btn-success lacceptance" data-bs-dismiss="modal">Reject</button>
+                    <button type="button" class="btn btn-info racceptance" data-bs-dismiss="modal">Accept</button>
+                    <button type="button" class="btn btn-info racceptance" data-bs-dismiss="modal">Reject</button>
                 </div>
             </div>
         </div>
@@ -351,7 +360,7 @@
         crossorigin="anonymous"></script>
     <!--<script src="js/datatables-simple-demo.js"></script>-->
     <script src="js/ApplicationsData.js"></script>
-    <script src="js/BankerApplicationsScript.js"></script>
+    <script src="js/BankerCardReplacement.js"></script>
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     -->
 </body>
