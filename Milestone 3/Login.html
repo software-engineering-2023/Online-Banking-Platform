@@ -15,7 +15,8 @@
         background-color:black;
     }
     </style>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+    <title>Home Page</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -43,6 +44,7 @@
                 <div class="form-outline mb-4">
                     <input type="Email Address" class="form-control" id="inputemail" placeholder="Email address" style="padding: 13px;">
                 </div>
+                <div >Do you have an account ?</div>
       
                 <!-- Password input -->
                 <div class="form-outline mb-4">
@@ -50,7 +52,8 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-dark btn-lg btn-block" style="background-color: black;">Sign in</button>
+                <button id="login-button" type="submit" class="btn btn-dark btn-lg btn-block" style="background-color: black;">Sign in</button>
+
 
                 <div class="d-flex justify-content-around align-items-center mb-4">
                     <!-- Checkbox -->
@@ -63,5 +66,7 @@
           </div>
         </div>
       </section>
+      <script src="js/LoginScript.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

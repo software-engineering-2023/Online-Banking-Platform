@@ -22,3 +22,6 @@ document.getElementById("myButton").addEventListener("click",  () => {
       }
       
       toastr.success("Your message has been sent successfully!")});
+
+
+      
