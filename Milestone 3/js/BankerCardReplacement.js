@@ -55,7 +55,7 @@ $(document).ready(function(){
         var rapID = +document.getElementById('rappID').textContent;
 
         var rstatus = $(this).text();
-        alert("Application Of ID '"+ rapID + "' has been " + rstatus + "ed");
+        // alert("Request Of ID '"+ rapID + "' has been " + rstatus + "ed");
 
         $("#rrow"+rapID).hide();
         showrow[rapID] = false;
@@ -67,3 +67,31 @@ $(document).ready(function(){
         // alert(showrow);
     });
 });
+
+
+
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('acceptapp')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    appendAlert("Request has been Accepted", 'info')
+  })
+}
+const alertTrigger2 = document.getElementById('rejectapp')
+if (alertTrigger2) {
+  alertTrigger2.addEventListener('click', () => {
+    appendAlert("Request has been Rejected", 'info')
+  })
+}

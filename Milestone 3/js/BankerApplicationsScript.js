@@ -46,8 +46,8 @@ $(document).ready(function(){
         var apID = +document.getElementById('appID').textContent;
 
         var status = $(this).text();
-        alert("Application Of ID '"+ apID + "' has been " + status + "ed");
-
+        // alert("Application Of ID '"+ apID + "' has been " + status + "ed");
+        alerty = "Application Of ID '"+ apID + "' has been " + status + "ed";
         $("#row"+apID).hide();
         showrow[apID] = false;
         AppsNocard--;
@@ -64,7 +64,7 @@ $(document).ready(function(){
         var lapID = +document.getElementById('lappID').textContent;
 
         var lstatus = $(this).text();
-        alert("Application Of ID '"+ lapID + "' has been " + lstatus + "ed");
+        // alert("Application Of ID '"+ lapID + "' has been " + lstatus + "ed");
 
         $("#lrow"+lapID).hide();
         showrow[lapID] = false;
@@ -154,10 +154,16 @@ function openPDF() {
     alertPlaceholder.append(wrapper)
   }
   
-  const alertTrigger = document.getElementById('liveAlertBtn')
+  const alertTrigger = document.getElementById('acceptapp')
   if (alertTrigger) {
     alertTrigger.addEventListener('click', () => {
-      appendAlert('Nice, you triggered this alert message!', 'success')
+      appendAlert("Application has been Accepted", 'info')
+    })
+  }
+  const alertTrigger2 = document.getElementById('rejectapp')
+  if (alertTrigger2) {
+    alertTrigger2.addEventListener('click', () => {
+      appendAlert("Application has been Rejected", 'info')
     })
   }
 
