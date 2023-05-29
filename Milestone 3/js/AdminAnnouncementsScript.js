@@ -127,6 +127,7 @@ function showUpdatePopup(announcement) {
       event.stopPropagation();
       if (form.checkValidity()) {
           handleUpdateAnnouncementSubmit(announcement);
+          $(updateModal).modal('hide');
       }
   });
 }
@@ -145,5 +146,4 @@ function handleUpdateAnnouncementSubmit(oldAnnouncement) {
     refreshView();
     refreshButtonsEventListeners();
 }
-
 
