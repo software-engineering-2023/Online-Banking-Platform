@@ -1,0 +1,54 @@
+hr {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+h1{
+    color: black;
+}
+h2{
+    color: black;
+}
+h3{
+    color: black;
+}
+h4{
+    color:black;
+}
+h5{
+    color:black;
+}
+p{
+    color:black;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 11;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    }
+    @media only screen and (min-width: 1400px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+    .overlay {
+        display: none;
+    }
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
