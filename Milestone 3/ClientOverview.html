@@ -35,6 +35,10 @@
             p{
                 color:black;
             }
+            .tbodyh, .trh, .tdh, .column1, .column2, .column3,  .column4, .column4, .column5, .column6{
+                border:none;
+                font-weight: normal;
+            }
             .overlay {
                 position: fixed;
                 top: 0;
@@ -172,15 +176,16 @@
             </nav>
         </div>
         <div id="layoutSidenav_content" style="margin-top: 0%">
-            <div style="margin-top: 81px; margin-left: 49px; margin-bottom: 0%">
+            <div style="margin-top: 81px; margin-left: 4%; margin-bottom: 0%">
                 <h1>Overview</h1>
                 <p class="text-muted">Here you can view some of your statistics and recent activity.</p>
+                <br>
             </div>
-            <div class="row" style="height: 100%;">
+            <div class="row" style="margin-left: 3%; margin-right: 3%">
                 <div style="float: left; width: 4%;">
                     <!-- Empty col on the left side -->
                 </div>
-                <div style="float: left; width: 50%;">
+                <div style="float: left; width: 45%;">
                     <div class="container" style="margin-top: 30px;">
                         <p style="font-size: 32px; font-weight: 500; margin-left: 1%; color:rgb(0, 0, 0)">Cards</p>
                         <div style="margin-bottom: 1%;">
@@ -195,13 +200,10 @@
                     <br>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="accordion mb-5" style="padding-top: 5px" id="accordionExample2">
+                    <div class="accordion mb-5" style="padding-top: 17px" id="accordionExample2">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne"><button class="accordion-button collapsed" style="background-color:rgb(43, 43, 43); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2" style="color:black; background-color:white">Recent Card Transactions</button></h3>
-                            <div class="accordion-collapse collapse show" id="collapseOne2" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
+                            <div class="accordion-collapse collapse" id="collapseOne2" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
                                 <div class="accordion-body">
                                     <table id="datatablesSimple" style="color:black; outline: none;">
                                         <thead>
@@ -288,10 +290,10 @@
                         </div>
                     </div>
                 </div>
-                <div style="float: left; width: 10%;">
+                <div style="float: left; width: 5%;">
                     <!-- Empty col in the middle side -->
                 </div>
-                <div style="float: left; width: 30%">
+                <div style="float: left; width: 42%">
                     <div class="container" style="margin-top: 20px">
                         <p style="font-size: 32px; font-weight: 500; margin-left: 1%; color:rgb(0, 0, 0)">Expenses</p>
                         <br>
@@ -300,11 +302,68 @@
                         <br>
                         <p style="font-size: 14px; margin-left: 1%; color:rgb(0, 0, 0)">Covering this year so far.</p>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="accordion mb-5" id="accordionExample1">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne"><button class="accordion-button collapsed" style="background-color:rgb(43, 43, 43); color: white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1" style="color:black; background-color:white">Recent Bank Account Transactions</button></h3>
+                            <div class="accordion-collapse collapse" id="collapseOne1" aria-labelledby="headingOne" style="color:black;" data-bs-parent="#accordionExample2">
+                                <div class="accordion-body">
+                                    <table id="table3" class="table table-striped">
+                                        <thead style="color:black;">
+                                            <tr class="tdh">
+                                            <th class="column1" >Date</th>
+                                            <th class="column2" >Account No.</th>
+                                            <th class="column3" >Name</th>
+                                            <th class="caa column4" >Amount</th>
+                                            <th class="caa column5">Type</th>
+                                            <th class="caa column6">Reason</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="tbodyh" style="border:none">
+                                            <tr class="tdh">
+                                            <td class="column1">2017-09-29 01:22</td>
+                                            <td class="column2">200339827298</td>
+                                            <td class="column3">German University</td>
+                                            <td class="column4">10000.00 EGP</td>
+                                            <td class="column5">Withdraw</td>
+                                            <td class="column6">Tuition Fees</td>
+                                            </tr>
+                                            <tr class="tdh">
+                                            <td class="column1">2017-09-28 05:57</td>
+                                            <td class="column2">600339827298</td>
+                                            <td class="column3">CIB bank Account</td>
+                                            <td class="column4">4756.00 EGP</td>
+                                            <td class="column5">Withdraw</td>
+                                            <td class="column6">Investment</td>
+                                            </tr>
+                                            <tr class="tdh">
+                                            <td class="column1">2017-09-26 05:57</td>
+                                            <td class="column2">700373827298</td>
+                                            <td class="column3">Amazon</td>
+                                            <td class="column4">122.00 EGP</td>
+                                            <td class="column5">Deposit</td>
+                                            <td class="column6">Refund</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="float: left; width: 10%;">
+                <div style="float: left; width: 1%;">
                     <!-- Empty col on the right side -->
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
         </aside>
         <!-- end of side bar -->
