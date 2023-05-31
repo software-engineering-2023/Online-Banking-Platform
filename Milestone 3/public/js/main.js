@@ -2,7 +2,7 @@ function launchVoiceRecognizer() {
     const recognition = new webkitSpeechRecognition();
     recognition.lang = 'en-US';
     recognition.continuous = true;
-    recognition.interimResults = true; // Enable interim results to get real-time transcription
+    recognition.interimResults = false; // Enable interim results to get real-time transcription
 
     recognition.onresult = function(event) {
         const speechText = event.results[event.results.length - 1][0].transcript; // Use the last result in case of multiple results
@@ -24,16 +24,12 @@ function launchVoiceRecognizer() {
         })
         .catch(error => console.error(error));
     };
-
-    recognition.onend = function() {
-        recognition.start();
-    };
     recognition.start();
 }
 
 function launchTextReader(textResponse) {
     // Create a new SpeechSynthesisUtterance object
-    const voice = "US English Male";
+    const voice = "US English Female";
     const rate = 1.0;
     responsiveVoice.speak(textResponse, voice, {rate});
 }

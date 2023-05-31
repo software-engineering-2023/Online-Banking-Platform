@@ -10,7 +10,7 @@ document.getElementById("login-button").addEventListener("click", function(event
       window.location.href = "Banker.html"; // Redirect to Home.html page
     } else if (username === "SystemAdminUsername" && password === "SystemAdminPassword") {
         window.location.href = "SystemAdminOverview.html"; // Redirect to success page for user2
-      } else if (username === "ClientUserName" && password === "ClientPassword") {
+      } else if (username === "ClientUsername" && password === "ClientPassword") {
         window.location.href = "ClientOverview.html"; // Redirect to success page for user3 
       }
        else if (username === "" || password === "") {

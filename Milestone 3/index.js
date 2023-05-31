@@ -1,6 +1,7 @@
 const dialogflow = require('@google-cloud/dialogflow');
 const uuid = require('uuid');
 
+
 const express = require('express');
 // Start up an instance of app
 const app = express();
@@ -19,18 +20,18 @@ app.use(express.static('public'));
  * Send a query to the dialogflow agent, and return the query result.
  * @param {string} projectId The project to be used
  */
-async function runSample(projectId = 'banking-system-388121', userQuery) {
-  // A unique identifier for the given session
-  const sessionId = uuid.v4();
 
-  // Create a new session
-  const sessionClient = new dialogflow.SessionsClient({
-    credentials: require('./banking-system-388121-ad5992b75c4e.json'),
-  });
-  const sessionPath = sessionClient.projectAgentSessionPath(
-    projectId,
-    sessionId
-  );
+// A unique identifier for the given session
+const sessionId = uuid.v4();
+const projectId = 'banking-system-388121';
+const sessionClient = new dialogflow.SessionsClient({
+  credentials: require('./banking-system-388121-ad5992b75c4e.json'),
+});
+const sessionPath = sessionClient.projectAgentSessionPath(
+  projectId,
+  sessionId
+);
+async function runSample(userQuery) {    
   // The text query request.
   const request = {
     session: sessionPath,
@@ -45,7 +46,6 @@ async function runSample(projectId = 'banking-system-388121', userQuery) {
   };
   // Send request and log result
   const responses = await sessionClient.detectIntent(request);
-  console.log('Detected intent');
   const result = responses[0].queryResult;
   const fulfillmentText = result.fulfillmentText;
   const intent = result.intent.displayName;
@@ -53,13 +53,12 @@ async function runSample(projectId = 'banking-system-388121', userQuery) {
 }
 
 
-
 app.get('/', (req, res) => res.sendFile(__dirname + '/public/Home.html'));
 
 app.post('/speech', async (req, res) => {
   try {
       const speechText = req.body.speech;
-      let result = await runSample('banking-system-388121', speechText);
+      let result = await runSample(speechText);
       res.status(200).send(result);
   } catch (err) {
       console.error(err);
@@ -67,7 +66,7 @@ app.post('/speech', async (req, res) => {
   }
 });
 
-port  = process.env.port || 3000;
+const port = process.env.port || 3000;
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
