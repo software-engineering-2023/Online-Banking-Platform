@@ -8,6 +8,7 @@ function launchVoiceRecognizer() {
         const speechText = event.results[event.results.length - 1][0].transcript; // Use the last result in case of multiple results
         console.log(speechText);
         if(! speechText) {
+            launchVoiceRecognizer();
             return;
         }
         fetch('/speech', {
@@ -29,7 +30,7 @@ function launchVoiceRecognizer() {
 
 function launchTextReader(textResponse) {
     // Create a new SpeechSynthesisUtterance object
-    const voice = "US English Female";
+    const voice = 'UK English Female';
     const rate = 1.0;
     responsiveVoice.speak(textResponse, voice, {rate});
 }

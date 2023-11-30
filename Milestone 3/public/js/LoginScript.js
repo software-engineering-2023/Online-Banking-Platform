@@ -5,13 +5,12 @@ document.getElementById("login-button").addEventListener("click", function(event
     var username = document.getElementById("inputemail").value;
     var password = document.getElementById("inputPassword").value;
     
-    // Check if the credentials are valid
     if (username === "BankerUsername" && password === "BankerPassword") {
-      window.location.href = "Banker.html"; // Redirect to Home.html page
+      window.location.href = "Banker.html"; 
     } else if (username === "SystemAdminUsername" && password === "SystemAdminPassword") {
-        window.location.href = "SystemAdminOverview.html"; // Redirect to success page for user2
+        window.location.href = "SystemAdminOverview.html"; 
       } else if (username === "ClientUsername" && password === "ClientPassword") {
-        window.location.href = "ClientOverview.html"; // Redirect to success page for user3 
+        window.location.href = "ClientOverview.html";  
       }
        else if (username === "" || password === "") {
         swal({

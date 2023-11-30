@@ -1,10 +1,14 @@
 const dialogflow = require('@google-cloud/dialogflow');
 const uuid = require('uuid');
 
+const dotenv = require('dotenv');
 
 const express = require('express');
 // Start up an instance of app
 const app = express();
+
+dotenv.config();
+
 /* Middleware*/
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -23,9 +27,9 @@ app.use(express.static('public'));
 
 // A unique identifier for the given session
 const sessionId = uuid.v4();
-const projectId = 'banking-system-388121';
+const projectId = process.env.projectId;
 const sessionClient = new dialogflow.SessionsClient({
-  credentials: require('./banking-system-388121-ad5992b75c4e.json'),
+  credentials: require('./credentials.json'),
 });
 const sessionPath = sessionClient.projectAgentSessionPath(
   projectId,
@@ -62,13 +66,13 @@ app.post('/speech', async (req, res) => {
       res.status(200).send(result);
   } catch (err) {
       console.error(err);
-      res.status(500).send('Error');
+      res.status(500).send(err.message);
   }
 });
 
 const port = process.env.port || 3000;
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`server is running on http://localhost:${port}`);
 });
 
 
