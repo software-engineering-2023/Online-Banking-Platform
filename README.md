@@ -40,17 +40,17 @@ Next, navigate to the login page and login using the following credentials:
 
 ##### Client
 
-Username: `ClientUserName`
+Username: `ClientUserName`  
 Password: `ClientPassword`
 
 ##### Banker
 
-Username: `BankerUsername`
+Username: `BankerUsername`  
 Password: `BankerPassword`
 
 ##### Admin
 
-Username: `SystemAdminUsername`
+Username: `SystemAdminUsername`  
 Password: `SystemAdminPassword`
 
 ## Tech Stack
