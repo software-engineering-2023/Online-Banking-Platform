@@ -4,23 +4,13 @@ An online banking web application that allows **_Clients_** to create and manage
 
 ## Screenshots
 
-### Home
-
 ![Home](docs/screenshots/home.png)
-
-### Client Dashboard
 
 ![Client Dashboard](docs/screenshots/dashboard.png)
 
-### Client Credit Cards
-
 ![Client Credit Cards](docs/screenshots/cards.png)
 
-### Client Credit Card Application
-
 ![Client Credit Card Application](docs/screenshots/apply.png)
-
-### Client Voice Assistant
 
 ![Client Voice Assistant](docs/screenshots/neo.png)
 
