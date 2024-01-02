@@ -12,6 +12,14 @@ An online banking web application that allows **_Clients_** to create and manage
 
 ![Client Credit Card Application](docs/screenshots/apply.png)
 
+![Client Bills](docs/screenshots/bills1.png)
+
+![Client Bills](docs/screenshots/bills2.png)
+
+![Client Notifications](docs/screenshots/notifications1.png)
+
+![Client Notifications](docs/screenshots/notifications2.png)
+
 ![Client Voice Assistant](docs/screenshots/neo.png)
 
 ## Getting Started
