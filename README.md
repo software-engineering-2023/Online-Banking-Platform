@@ -28,17 +28,17 @@ git clone https://github.com/software-engineering-2023/Online-Banking-Platform.g
 
 Next, navigate to the login page and login using the following credentials:
 
-### Client
+#### Client
 
 Username: `ClientUserName`  
 Password: `ClientPassword`
 
-### Banker
+#### Banker
 
 Username: `BankerUsername`  
 Password: `BankerPassword`
 
-### Admin
+#### Admin
 
 Username: `SystemAdminUsername`  
 Password: `SystemAdminPassword`
@@ -48,7 +48,8 @@ Password: `SystemAdminPassword`
 - HTML
 - CSS
 - JavaScript
-- Bootstrap
+- jQuery
+- Bootstrap 5
 - Fontawesome
 - VSCode
 - Git
